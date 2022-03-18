@@ -1,8 +1,8 @@
-# openapi.api.DfsApi
+# dfs_sdk.api.DfsApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dfs_sdk/api.dart';
 ```
 
 All URIs are relative to *https://ryfjnva5k5.execute-api.eu-central-1.amazonaws.com/prod*
@@ -32,7 +32,7 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dfs_sdk/api.dart';
 
 final api_instance = DfsApi();
 final apiKey = apiKey_example; // String | 
@@ -75,7 +75,7 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dfs_sdk/api.dart';
 
 final api_instance = DfsApi();
 final apiKey = apiKey_example; // String | 
@@ -118,7 +118,7 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dfs_sdk/api.dart';
 
 final api_instance = DfsApi();
 final apiKey = apiKey_example; // String | 
@@ -161,7 +161,7 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dfs_sdk/api.dart';
 
 final api_instance = DfsApi();
 final apiKey = apiKey_example; // String | 
@@ -204,7 +204,7 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dfs_sdk/api.dart';
 
 final api_instance = DfsApi();
 
@@ -240,7 +240,7 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dfs_sdk/api.dart';
 
 final api_instance = DfsApi();
 
@@ -276,7 +276,7 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dfs_sdk/api.dart';
 
 final api_instance = DfsApi();
 
@@ -312,7 +312,7 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dfs_sdk/api.dart';
 
 final api_instance = DfsApi();
 final symbol = symbol_example; // String | 
@@ -352,7 +352,7 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dfs_sdk/api.dart';
 
 final api_instance = DfsApi();
 final symbol = symbol_example; // String | 
@@ -392,7 +392,7 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dfs_sdk/api.dart';
 
 final api_instance = DfsApi();
 final symbol = symbol_example; // String | 
@@ -432,7 +432,7 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dfs_sdk/api.dart';
 
 final api_instance = DfsApi();
 final symbol = symbol_example; // String | 
@@ -472,7 +472,7 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dfs_sdk/api.dart';
 
 final api_instance = DfsApi();
 final symbol = symbol_example; // String | 
@@ -512,7 +512,7 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dfs_sdk/api.dart';
 
 final api_instance = DfsApi();
 final symbol = symbol_example; // String | 
@@ -552,7 +552,7 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dfs_sdk/api.dart';
 
 final api_instance = DfsApi();
 final apiKey = apiKey_example; // String | 

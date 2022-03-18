@@ -1,8 +1,8 @@
-# openapi.model.Model24hStockdataResponseModel
+# dfs_sdk.model.Model24hStockdataResponseModel
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dfs_sdk/api.dart';
 ```
 
 ## Properties

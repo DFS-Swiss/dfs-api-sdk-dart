@@ -1,8 +1,8 @@
-# openapi.model.YtdStockdataResponseModelBody
+# dfs_sdk.model.YtdStockdataResponseModelBody
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dfs_sdk/api.dart';
 ```
 
 ## Properties

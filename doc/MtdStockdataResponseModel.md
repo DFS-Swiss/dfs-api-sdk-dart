@@ -1,8 +1,8 @@
-# openapi.model.MtdStockdataResponseModel
+# dfs_sdk.model.MtdStockdataResponseModel
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dfs_sdk/api.dart';
 ```
 
 ## Properties
