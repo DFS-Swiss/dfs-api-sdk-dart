@@ -1,21 +1,19 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.7
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: unused_import
 
-import 'package:dfs_sdk/api.dart';
+import 'package:dfs_sdk/model/model2years_stockdata_response_model.dart';
 import 'package:test/test.dart';
 
 // tests for Model2yearsStockdataResponseModel
 void main() {
-  // final instance = Model2yearsStockdataResponseModel();
+  final instance = Model2yearsStockdataResponseModelBuilder();
+  // TODO add properties to the builder and call build()
 
-  group('test Model2yearsStockdataResponseModel', () {
+  group(Model2yearsStockdataResponseModel, () {
     // String message
     test('to test the property `message`', () async {
       // TODO
