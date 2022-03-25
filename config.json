@@ -1,0 +1,8 @@
+{
+    "projectName": "DFS_Sdk",
+    "configOptions": {
+        "pubName": "dfs_sdk",
+        "pubLibrary": "dfs_sdk",
+        "pubAuthor": "TheCodeCave"
+    }
+}
