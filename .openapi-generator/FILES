@@ -1,4 +1,5 @@
 .gitignore
+.openapi-generator-ignore
 .travis.yml
 README.md
 analysis_options.yaml
@@ -35,3 +36,14 @@ lib/model/ytd_stockdata_response_model.dart
 lib/model/ytd_stockdata_response_model_body.dart
 lib/model/ytd_stockdata_response_model_body_item.dart
 pubspec.yaml
+test/dfs_api_test.dart
+test/get_user_response_model_body_item_test.dart
+test/get_user_response_model_body_test.dart
+test/get_user_response_model_test.dart
+test/model1year_stockdata_response_model_test.dart
+test/model24h_stockdata_response_model_test.dart
+test/model2years_stockdata_response_model_test.dart
+test/mtd_stockdata_response_model_test.dart
+test/ytd_stockdata_response_model_body_item_test.dart
+test/ytd_stockdata_response_model_body_test.dart
+test/ytd_stockdata_response_model_test.dart

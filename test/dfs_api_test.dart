@@ -17,11 +17,6 @@ void main() {
   // final instance = DfsApi();
 
   group('tests for DfsApi', () {
-    //Future<GetUserResponseModel> getUser(String apiKey) async
-    test('test getUser', () async {
-      // TODO
-    });
-
     //Future<MtdStockdataResponseModel> mtdStockdata(String apiKey, String symbol) async
     test('test mtdStockdata', () async {
       // TODO
@@ -44,6 +39,11 @@ void main() {
 
     //Future<Model2yearsStockdataResponseModel> twoYearsStockdata(String apiKey, String symbol) async
     test('test twoYearsStockdata', () async {
+      // TODO
+    });
+
+    //Future<GetUserResponseModel> userGet(String apiKey) async
+    test('test userGet', () async {
       // TODO
     });
 
