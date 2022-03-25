@@ -1,40 +1,33 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.7
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: unused_import
 
-part of openapi.api;
+import 'dart:async';
+import 'package:dfs_sdk/auth/auth.dart';
+import 'package:dio/dio.dart';
 
-class ApiKeyAuth implements Authentication {
-  ApiKeyAuth(this.location, this.paramName);
+class ApiKeyAuthInterceptor extends AuthInterceptor {
+    Map<String, String> apiKeys = {};
 
-  final String location;
-  final String paramName;
-
-  String apiKeyPrefix = '';
-  String apiKey = '';
-
-  @override
-  void applyToParams(List<QueryParam> queryParams, Map<String, String> headerParams) {
-    final paramValue = apiKeyPrefix.isEmpty ? apiKey : '$apiKeyPrefix $apiKey';
-
-    if (paramValue.isNotEmpty) {
-      if (location == 'query') {
-        queryParams.add(QueryParam(paramName, paramValue));
-      } else if (location == 'header') {
-        headerParams[paramName] = paramValue;
-      } else if (location == 'cookie') {
-        headerParams.update(
-          'Cookie',
-          (existingCookie) => '$existingCookie; $paramName=$paramValue',
-          ifAbsent: () => '$paramName=$paramValue',
-        );
-      }
+    @override
+    Future<dynamic> onRequest(RequestOptions options) {
+        final authInfo = getAuthInfo(options, 'apiKey');
+        for (final info in authInfo) {
+            final authName = info['name'] as String;
+            final authKeyName = info['keyName'] as String;
+            final authWhere = info['where'] as String;
+            final apiKey = apiKeys[authName];
+            if (apiKey != null) {
+                if (authWhere == 'query') {
+                    options.queryParameters[authKeyName] = apiKey;
+                } else {
+                    options.headers[authKeyName] = apiKey;
+                }
+            }
+        }
+        return super.onRequest(options);
     }
-  }
 }

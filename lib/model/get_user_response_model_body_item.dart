@@ -1,189 +1,160 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.7
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: unused_import
 
-part of openapi.api;
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-class GetUserResponseModelBodyItem {
-  /// Returns a new [GetUserResponseModelBodyItem] instance.
-  GetUserResponseModelBodyItem({
-    required this.createdAt,
-    required this.lastLogin,
-    required this.firstName,
-    this.referalCode,
-    required this.surName,
-    required this.emailConfirmed,
-    this.inputWalletAdress,
-    required this.id,
-    required this.email,
-  });
+part 'get_user_response_model_body_item.g.dart';
 
-  DateTime createdAt;
+abstract class GetUserResponseModelBodyItem implements Built<GetUserResponseModelBodyItem, GetUserResponseModelBodyItemBuilder> {
 
-  DateTime lastLogin;
+    @BuiltValueField(wireName: r'createdAt')
+    DateTime get createdAt;
 
-  String firstName;
+    @BuiltValueField(wireName: r'lastLogin')
+    DateTime get lastLogin;
 
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? referalCode;
+    @BuiltValueField(wireName: r'firstName')
+    String get firstName;
 
-  String surName;
+    @nullable
+    @BuiltValueField(wireName: r'referalCode')
+    String get referalCode;
 
-  bool emailConfirmed;
+    @BuiltValueField(wireName: r'surName')
+    String get surName;
 
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? inputWalletAdress;
+    @BuiltValueField(wireName: r'emailConfirmed')
+    bool get emailConfirmed;
 
-  String id;
+    @nullable
+    @BuiltValueField(wireName: r'inputWalletAdress')
+    String get inputWalletAdress;
 
-  String email;
+    @BuiltValueField(wireName: r'_id')
+    String get id;
 
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is GetUserResponseModelBodyItem &&
-     other.createdAt == createdAt &&
-     other.lastLogin == lastLogin &&
-     other.firstName == firstName &&
-     other.referalCode == referalCode &&
-     other.surName == surName &&
-     other.emailConfirmed == emailConfirmed &&
-     other.inputWalletAdress == inputWalletAdress &&
-     other.id == id &&
-     other.email == email;
+    @BuiltValueField(wireName: r'email')
+    String get email;
 
-  @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (createdAt.hashCode) +
-    (lastLogin.hashCode) +
-    (firstName.hashCode) +
-    (referalCode == null ? 0 : referalCode!.hashCode) +
-    (surName.hashCode) +
-    (emailConfirmed.hashCode) +
-    (inputWalletAdress == null ? 0 : inputWalletAdress!.hashCode) +
-    (id.hashCode) +
-    (email.hashCode);
+    GetUserResponseModelBodyItem._();
 
-  @override
-  String toString() => 'GetUserResponseModelBodyItem[createdAt=$createdAt, lastLogin=$lastLogin, firstName=$firstName, referalCode=$referalCode, surName=$surName, emailConfirmed=$emailConfirmed, inputWalletAdress=$inputWalletAdress, id=$id, email=$email]';
+    static void _initializeBuilder(GetUserResponseModelBodyItemBuilder b) => b;
 
-  Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
-      json[r'createdAt'] = createdAt.toUtc().toIso8601String();
-      json[r'lastLogin'] = lastLogin.toUtc().toIso8601String();
-      json[r'firstName'] = firstName;
-    if (referalCode != null) {
-      json[r'referalCode'] = referalCode;
-    }
-      json[r'surName'] = surName;
-      json[r'emailConfirmed'] = emailConfirmed;
-    if (inputWalletAdress != null) {
-      json[r'inputWalletAdress'] = inputWalletAdress;
-    }
-      json[r'_id'] = id;
-      json[r'email'] = email;
-    return json;
-  }
+    factory GetUserResponseModelBodyItem([void updates(GetUserResponseModelBodyItemBuilder b)]) = _$GetUserResponseModelBodyItem;
 
-  /// Returns a new [GetUserResponseModelBodyItem] instance and imports its values from
-  /// [value] if it's a [Map], null otherwise.
-  // ignore: prefer_constructors_over_static_methods
-  static GetUserResponseModelBodyItem? fromJson(dynamic value) {
-    if (value is Map) {
-      final json = value.cast<String, dynamic>();
+    @BuiltValueSerializer(custom: true)
+    static Serializer<GetUserResponseModelBodyItem> get serializer => _$GetUserResponseModelBodyItemSerializer();
+}
 
-      // Ensure that the map contains the required keys.
-      // Note 1: the values aren't checked for validity beyond being non-null.
-      // Note 2: this code is stripped in release mode!
-      assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetUserResponseModelBodyItem[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetUserResponseModelBodyItem[$key]" has a null value in JSON.');
-        });
-        return true;
-      }());
+class _$GetUserResponseModelBodyItemSerializer implements StructuredSerializer<GetUserResponseModelBodyItem> {
 
-      return GetUserResponseModelBodyItem(
-        createdAt: mapDateTime(json, r'createdAt', '')!,
-        lastLogin: mapDateTime(json, r'lastLogin', '')!,
-        firstName: mapValueOfType<String>(json, r'firstName')!,
-        referalCode: mapValueOfType<String>(json, r'referalCode'),
-        surName: mapValueOfType<String>(json, r'surName')!,
-        emailConfirmed: mapValueOfType<bool>(json, r'emailConfirmed')!,
-        inputWalletAdress: mapValueOfType<String>(json, r'inputWalletAdress'),
-        id: mapValueOfType<String>(json, r'_id')!,
-        email: mapValueOfType<String>(json, r'email')!,
-      );
-    }
-    return null;
-  }
+    @override
+    final Iterable<Type> types = const [GetUserResponseModelBodyItem, _$GetUserResponseModelBodyItem];
+    @override
+    final String wireName = r'GetUserResponseModelBodyItem';
 
-  static List<GetUserResponseModelBodyItem>? listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <GetUserResponseModelBodyItem>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = GetUserResponseModelBodyItem.fromJson(row);
-        if (value != null) {
-          result.add(value);
+    @override
+    Iterable<Object> serialize(Serializers serializers, GetUserResponseModelBodyItem object,
+        {FullType specifiedType = FullType.unspecified}) {
+        final result = <Object>[];
+        result
+            ..add(r'createdAt')
+            ..add(serializers.serialize(object.createdAt,
+                specifiedType: const FullType(DateTime)));
+        result
+            ..add(r'lastLogin')
+            ..add(serializers.serialize(object.lastLogin,
+                specifiedType: const FullType(DateTime)));
+        result
+            ..add(r'firstName')
+            ..add(serializers.serialize(object.firstName,
+                specifiedType: const FullType(String)));
+        if (object.referalCode != null) {
+            result
+                ..add(r'referalCode')
+                ..add(serializers.serialize(object.referalCode,
+                    specifiedType: const FullType(String)));
         }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-
-  static Map<String, GetUserResponseModelBodyItem> mapFromJson(dynamic json) {
-    final map = <String, GetUserResponseModelBodyItem>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = GetUserResponseModelBodyItem.fromJson(entry.value);
-        if (value != null) {
-          map[entry.key] = value;
+        result
+            ..add(r'surName')
+            ..add(serializers.serialize(object.surName,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'emailConfirmed')
+            ..add(serializers.serialize(object.emailConfirmed,
+                specifiedType: const FullType(bool)));
+        if (object.inputWalletAdress != null) {
+            result
+                ..add(r'inputWalletAdress')
+                ..add(serializers.serialize(object.inputWalletAdress,
+                    specifiedType: const FullType(String)));
         }
-      }
+        result
+            ..add(r'_id')
+            ..add(serializers.serialize(object.id,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'email')
+            ..add(serializers.serialize(object.email,
+                specifiedType: const FullType(String)));
+        return result;
     }
-    return map;
-  }
 
-  // maps a json object with a list of GetUserResponseModelBodyItem-objects as value to a dart map
-  static Map<String, List<GetUserResponseModelBodyItem>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<GetUserResponseModelBodyItem>>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = GetUserResponseModelBodyItem.listFromJson(entry.value, growable: growable,);
-        if (value != null) {
-          map[entry.key] = value;
+    @override
+    GetUserResponseModelBodyItem deserialize(Serializers serializers, Iterable<Object> serialized,
+        {FullType specifiedType = FullType.unspecified}) {
+        final result = GetUserResponseModelBodyItemBuilder();
+
+        final iterator = serialized.iterator;
+        while (iterator.moveNext()) {
+            final key = iterator.current as String;
+            iterator.moveNext();
+            final dynamic value = iterator.current;
+            switch (key) {
+                case r'createdAt':
+                    result.createdAt = serializers.deserialize(value,
+                        specifiedType: const FullType(DateTime)) as DateTime;
+                    break;
+                case r'lastLogin':
+                    result.lastLogin = serializers.deserialize(value,
+                        specifiedType: const FullType(DateTime)) as DateTime;
+                    break;
+                case r'firstName':
+                    result.firstName = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    break;
+                case r'referalCode':
+                    result.referalCode = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    break;
+                case r'surName':
+                    result.surName = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    break;
+                case r'emailConfirmed':
+                    result.emailConfirmed = serializers.deserialize(value,
+                        specifiedType: const FullType(bool)) as bool;
+                    break;
+                case r'inputWalletAdress':
+                    result.inputWalletAdress = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    break;
+                case r'_id':
+                    result.id = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    break;
+                case r'email':
+                    result.email = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    break;
+            }
         }
-      }
+        return result.build();
     }
-    return map;
-  }
-
-  /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-    'createdAt',
-    'lastLogin',
-    'firstName',
-    'surName',
-    'emailConfirmed',
-    '_id',
-    'email',
-  };
 }
 

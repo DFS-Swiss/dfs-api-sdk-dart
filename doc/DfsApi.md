@@ -36,12 +36,12 @@ Method | HTTP request | Description
 ```dart
 import 'package:dfs_sdk/api.dart';
 
-final api_instance = DfsApi();
-final apiKey = apiKey_example; // String | 
-final symbol = symbol_example; // String | 
+var api_instance = new DfsApi();
+var apiKey = apiKey_example; // String | 
+var symbol = symbol_example; // String | 
 
 try {
-    final result = api_instance.mtdStockdata(apiKey, symbol);
+    var result = api_instance.mtdStockdata(apiKey, symbol);
     print(result);
 } catch (e) {
     print('Exception when calling DfsApi->mtdStockdata: $e\n');
@@ -79,12 +79,12 @@ No authorization required
 ```dart
 import 'package:dfs_sdk/api.dart';
 
-final api_instance = DfsApi();
-final apiKey = apiKey_example; // String | 
-final symbol = symbol_example; // String | 
+var api_instance = new DfsApi();
+var apiKey = apiKey_example; // String | 
+var symbol = symbol_example; // String | 
 
 try {
-    final result = api_instance.oneYearStockdata(apiKey, symbol);
+    var result = api_instance.oneYearStockdata(apiKey, symbol);
     print(result);
 } catch (e) {
     print('Exception when calling DfsApi->oneYearStockdata: $e\n');
@@ -122,7 +122,7 @@ No authorization required
 ```dart
 import 'package:dfs_sdk/api.dart';
 
-final api_instance = DfsApi();
+var api_instance = new DfsApi();
 
 try {
     api_instance.rootOptions();
@@ -158,12 +158,12 @@ No authorization required
 ```dart
 import 'package:dfs_sdk/api.dart';
 
-final api_instance = DfsApi();
-final apiKey = apiKey_example; // String | 
-final symbol = symbol_example; // String | 
+var api_instance = new DfsApi();
+var apiKey = apiKey_example; // String | 
+var symbol = symbol_example; // String | 
 
 try {
-    final result = api_instance.twentyfourHourStockdata(apiKey, symbol);
+    var result = api_instance.twentyfourHourStockdata(apiKey, symbol);
     print(result);
 } catch (e) {
     print('Exception when calling DfsApi->twentyfourHourStockdata: $e\n');
@@ -201,12 +201,12 @@ No authorization required
 ```dart
 import 'package:dfs_sdk/api.dart';
 
-final api_instance = DfsApi();
-final apiKey = apiKey_example; // String | 
-final symbol = symbol_example; // String | 
+var api_instance = new DfsApi();
+var apiKey = apiKey_example; // String | 
+var symbol = symbol_example; // String | 
 
 try {
-    final result = api_instance.twoYearsStockdata(apiKey, symbol);
+    var result = api_instance.twoYearsStockdata(apiKey, symbol);
     print(result);
 } catch (e) {
     print('Exception when calling DfsApi->twoYearsStockdata: $e\n');
@@ -248,11 +248,11 @@ import 'package:dfs_sdk/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKeyPrefix = 'Bearer';
 
-final api_instance = DfsApi();
-final apiKey = apiKey_example; // String | 
+var api_instance = new DfsApi();
+var apiKey = apiKey_example; // String | 
 
 try {
-    final result = api_instance.userGet(apiKey);
+    var result = api_instance.userGet(apiKey);
     print(result);
 } catch (e) {
     print('Exception when calling DfsApi->userGet: $e\n');
@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 ```dart
 import 'package:dfs_sdk/api.dart';
 
-final api_instance = DfsApi();
+var api_instance = new DfsApi();
 
 try {
     api_instance.v1Options();
@@ -325,7 +325,7 @@ No authorization required
 ```dart
 import 'package:dfs_sdk/api.dart';
 
-final api_instance = DfsApi();
+var api_instance = new DfsApi();
 
 try {
     api_instance.v1StockdataOptions();
@@ -361,8 +361,8 @@ No authorization required
 ```dart
 import 'package:dfs_sdk/api.dart';
 
-final api_instance = DfsApi();
-final symbol = symbol_example; // String | 
+var api_instance = new DfsApi();
+var symbol = symbol_example; // String | 
 
 try {
     api_instance.v1StockdataSymbol1yearOptions(symbol);
@@ -401,8 +401,8 @@ No authorization required
 ```dart
 import 'package:dfs_sdk/api.dart';
 
-final api_instance = DfsApi();
-final symbol = symbol_example; // String | 
+var api_instance = new DfsApi();
+var symbol = symbol_example; // String | 
 
 try {
     api_instance.v1StockdataSymbol24hOptions(symbol);
@@ -441,8 +441,8 @@ No authorization required
 ```dart
 import 'package:dfs_sdk/api.dart';
 
-final api_instance = DfsApi();
-final symbol = symbol_example; // String | 
+var api_instance = new DfsApi();
+var symbol = symbol_example; // String | 
 
 try {
     api_instance.v1StockdataSymbol2yearsOptions(symbol);
@@ -481,8 +481,8 @@ No authorization required
 ```dart
 import 'package:dfs_sdk/api.dart';
 
-final api_instance = DfsApi();
-final symbol = symbol_example; // String | 
+var api_instance = new DfsApi();
+var symbol = symbol_example; // String | 
 
 try {
     api_instance.v1StockdataSymbolMtdOptions(symbol);
@@ -521,8 +521,8 @@ No authorization required
 ```dart
 import 'package:dfs_sdk/api.dart';
 
-final api_instance = DfsApi();
-final symbol = symbol_example; // String | 
+var api_instance = new DfsApi();
+var symbol = symbol_example; // String | 
 
 try {
     api_instance.v1StockdataSymbolOptions(symbol);
@@ -561,8 +561,8 @@ No authorization required
 ```dart
 import 'package:dfs_sdk/api.dart';
 
-final api_instance = DfsApi();
-final symbol = symbol_example; // String | 
+var api_instance = new DfsApi();
+var symbol = symbol_example; // String | 
 
 try {
     api_instance.v1StockdataSymbolYtdOptions(symbol);
@@ -601,7 +601,7 @@ No authorization required
 ```dart
 import 'package:dfs_sdk/api.dart';
 
-final api_instance = DfsApi();
+var api_instance = new DfsApi();
 
 try {
     api_instance.v1UserOptions();
@@ -637,12 +637,12 @@ No authorization required
 ```dart
 import 'package:dfs_sdk/api.dart';
 
-final api_instance = DfsApi();
-final apiKey = apiKey_example; // String | 
-final symbol = symbol_example; // String | 
+var api_instance = new DfsApi();
+var apiKey = apiKey_example; // String | 
+var symbol = symbol_example; // String | 
 
 try {
-    final result = api_instance.ytdStockdata(apiKey, symbol);
+    var result = api_instance.ytdStockdata(apiKey, symbol);
     print(result);
 } catch (e) {
     print('Exception when calling DfsApi->ytdStockdata: $e\n');

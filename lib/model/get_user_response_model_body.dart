@@ -1,118 +1,70 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.7
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: unused_import
 
-part of openapi.api;
+import 'package:dfs_sdk/model/get_user_response_model_body_item.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-class GetUserResponseModelBody {
-  /// Returns a new [GetUserResponseModelBody] instance.
-  GetUserResponseModelBody({
-    this.item,
-  });
+part 'get_user_response_model_body.g.dart';
 
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  GetUserResponseModelBodyItem? item;
+abstract class GetUserResponseModelBody implements Built<GetUserResponseModelBody, GetUserResponseModelBodyBuilder> {
 
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is GetUserResponseModelBody &&
-     other.item == item;
+    @nullable
+    @BuiltValueField(wireName: r'item')
+    GetUserResponseModelBodyItem get item;
 
-  @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (item == null ? 0 : item!.hashCode);
+    GetUserResponseModelBody._();
 
-  @override
-  String toString() => 'GetUserResponseModelBody[item=$item]';
+    static void _initializeBuilder(GetUserResponseModelBodyBuilder b) => b;
 
-  Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
-    if (item != null) {
-      json[r'item'] = item;
-    }
-    return json;
-  }
+    factory GetUserResponseModelBody([void updates(GetUserResponseModelBodyBuilder b)]) = _$GetUserResponseModelBody;
 
-  /// Returns a new [GetUserResponseModelBody] instance and imports its values from
-  /// [value] if it's a [Map], null otherwise.
-  // ignore: prefer_constructors_over_static_methods
-  static GetUserResponseModelBody? fromJson(dynamic value) {
-    if (value is Map) {
-      final json = value.cast<String, dynamic>();
+    @BuiltValueSerializer(custom: true)
+    static Serializer<GetUserResponseModelBody> get serializer => _$GetUserResponseModelBodySerializer();
+}
 
-      // Ensure that the map contains the required keys.
-      // Note 1: the values aren't checked for validity beyond being non-null.
-      // Note 2: this code is stripped in release mode!
-      assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetUserResponseModelBody[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetUserResponseModelBody[$key]" has a null value in JSON.');
-        });
-        return true;
-      }());
+class _$GetUserResponseModelBodySerializer implements StructuredSerializer<GetUserResponseModelBody> {
 
-      return GetUserResponseModelBody(
-        item: GetUserResponseModelBodyItem.fromJson(json[r'item']),
-      );
-    }
-    return null;
-  }
+    @override
+    final Iterable<Type> types = const [GetUserResponseModelBody, _$GetUserResponseModelBody];
+    @override
+    final String wireName = r'GetUserResponseModelBody';
 
-  static List<GetUserResponseModelBody>? listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <GetUserResponseModelBody>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = GetUserResponseModelBody.fromJson(row);
-        if (value != null) {
-          result.add(value);
+    @override
+    Iterable<Object> serialize(Serializers serializers, GetUserResponseModelBody object,
+        {FullType specifiedType = FullType.unspecified}) {
+        final result = <Object>[];
+        if (object.item != null) {
+            result
+                ..add(r'item')
+                ..add(serializers.serialize(object.item,
+                    specifiedType: const FullType(GetUserResponseModelBodyItem)));
         }
-      }
+        return result;
     }
-    return result.toList(growable: growable);
-  }
 
-  static Map<String, GetUserResponseModelBody> mapFromJson(dynamic json) {
-    final map = <String, GetUserResponseModelBody>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = GetUserResponseModelBody.fromJson(entry.value);
-        if (value != null) {
-          map[entry.key] = value;
+    @override
+    GetUserResponseModelBody deserialize(Serializers serializers, Iterable<Object> serialized,
+        {FullType specifiedType = FullType.unspecified}) {
+        final result = GetUserResponseModelBodyBuilder();
+
+        final iterator = serialized.iterator;
+        while (iterator.moveNext()) {
+            final key = iterator.current as String;
+            iterator.moveNext();
+            final dynamic value = iterator.current;
+            switch (key) {
+                case r'item':
+                    result.item.replace(serializers.deserialize(value,
+                        specifiedType: const FullType(GetUserResponseModelBodyItem)) as GetUserResponseModelBodyItem);
+                    break;
+            }
         }
-      }
+        return result.build();
     }
-    return map;
-  }
-
-  // maps a json object with a list of GetUserResponseModelBody-objects as value to a dart map
-  static Map<String, List<GetUserResponseModelBody>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<GetUserResponseModelBody>>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = GetUserResponseModelBody.listFromJson(entry.value, growable: growable,);
-        if (value != null) {
-          map[entry.key] = value;
-        }
-      }
-    }
-    return map;
-  }
-
-  /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-  };
 }
 

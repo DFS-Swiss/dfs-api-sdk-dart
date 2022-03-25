@@ -1,741 +1,771 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.7
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: unused_import
 
-part of openapi.api;
+import 'dart:async';
+import 'package:dio/dio.dart';
+import 'package:built_value/serializer.dart';
 
+import 'package:dfs_sdk/model/get_user_response_model.dart';
+import 'package:dfs_sdk/model/model1year_stockdata_response_model.dart';
+import 'package:dfs_sdk/model/model24h_stockdata_response_model.dart';
+import 'package:dfs_sdk/model/model2years_stockdata_response_model.dart';
+import 'package:dfs_sdk/model/mtd_stockdata_response_model.dart';
+import 'package:dfs_sdk/model/ytd_stockdata_response_model.dart';
 
 class DfsApi {
-  DfsApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  final ApiClient apiClient;
+  final Dio _dio;
 
-  /// Performs an HTTP 'GET /v1/stockdata/{symbol}/mtd' operation and returns the [Response].
-  /// Parameters:
+  final Serializers _serializers;
+
+  const DfsApi(this._dio, this._serializers);
+
+  /// 
   ///
-  /// * [String] apiKey (required):
-  ///
-  /// * [String] symbol (required):
-  Future<Response> mtdStockdataWithHttpInfo(String apiKey, String symbol,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/v1/stockdata/{symbol}/mtd'
-      .replaceAll('{symbol}', symbol);
+  /// 
+  Future<Response<MtdStockdataResponseModel>> mtdStockdata(
+    String apiKey,
+    String symbol, { 
+    CancelToken cancelToken,
+    Map<String, dynamic> headers,
+    Map<String, dynamic> extra,
+    ValidateStatus validateStatus,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    final _request = RequestOptions(
+      path: r'/v1/stockdata/{symbol}/mtd'.replaceAll('{' r'symbol' '}', symbol.toString()),
+      method: 'GET',
+      headers: <String, dynamic>{
+        r'apiKey': apiKey,
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+      contentType: 'application/json',
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
-    // ignore: prefer_final_locals
-    Object? postBody;
+    dynamic _bodyData;
 
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
+    final _response = await _dio.request<dynamic>(
+      _request.path,
+      data: _bodyData,
+      options: _request,
+    );
 
-    headerParams[r'apiKey'] = parameterToString(apiKey);
+    const _responseType = FullType(MtdStockdataResponseModel);
+    final _responseData = _serializers.deserialize(
+      _response.data,
+      specifiedType: _responseType,
+    ) as MtdStockdataResponseModel;
 
-    const authNames = <String>[];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
+    return Response<MtdStockdataResponseModel>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      request: _response.request,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
     );
   }
 
-  /// Parameters:
+  /// 
   ///
-  /// * [String] apiKey (required):
-  ///
-  /// * [String] symbol (required):
-  Future<MtdStockdataResponseModel?> mtdStockdata(String apiKey, String symbol,) async {
-    final response = await mtdStockdataWithHttpInfo(apiKey, symbol,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'MtdStockdataResponseModel',) as MtdStockdataResponseModel;
-    
-    }
-    return null;
-  }
+  /// 
+  Future<Response<Model1yearStockdataResponseModel>> oneYearStockdata(
+    String apiKey,
+    String symbol, { 
+    CancelToken cancelToken,
+    Map<String, dynamic> headers,
+    Map<String, dynamic> extra,
+    ValidateStatus validateStatus,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    final _request = RequestOptions(
+      path: r'/v1/stockdata/{symbol}/1year'.replaceAll('{' r'symbol' '}', symbol.toString()),
+      method: 'GET',
+      headers: <String, dynamic>{
+        r'apiKey': apiKey,
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+      contentType: 'application/json',
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
-  /// Performs an HTTP 'GET /v1/stockdata/{symbol}/1year' operation and returns the [Response].
-  /// Parameters:
-  ///
-  /// * [String] apiKey (required):
-  ///
-  /// * [String] symbol (required):
-  Future<Response> oneYearStockdataWithHttpInfo(String apiKey, String symbol,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/v1/stockdata/{symbol}/1year'
-      .replaceAll('{symbol}', symbol);
+    dynamic _bodyData;
 
-    // ignore: prefer_final_locals
-    Object? postBody;
+    final _response = await _dio.request<dynamic>(
+      _request.path,
+      data: _bodyData,
+      options: _request,
+    );
 
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
+    const _responseType = FullType(Model1yearStockdataResponseModel);
+    final _responseData = _serializers.deserialize(
+      _response.data,
+      specifiedType: _responseType,
+    ) as Model1yearStockdataResponseModel;
 
-    headerParams[r'apiKey'] = parameterToString(apiKey);
-
-    const authNames = <String>[];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
+    return Response<Model1yearStockdataResponseModel>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      request: _response.request,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
     );
   }
 
-  /// Parameters:
+  /// 
   ///
-  /// * [String] apiKey (required):
-  ///
-  /// * [String] symbol (required):
-  Future<Model1yearStockdataResponseModel?> oneYearStockdata(String apiKey, String symbol,) async {
-    final response = await oneYearStockdataWithHttpInfo(apiKey, symbol,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Model1yearStockdataResponseModel',) as Model1yearStockdataResponseModel;
-    
-    }
-    return null;
+  /// 
+  Future<Response<void>> rootOptions({ 
+    CancelToken cancelToken,
+    Map<String, dynamic> headers,
+    Map<String, dynamic> extra,
+    ValidateStatus validateStatus,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    final _request = RequestOptions(
+      path: r'/',
+      method: 'OPTIONS',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+      contentType: 'application/json',
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    dynamic _bodyData;
+
+    final _response = await _dio.request<dynamic>(
+      _request.path,
+      data: _bodyData,
+      options: _request,
+    );
+
+    return _response;
   }
 
-  /// Performs an HTTP 'OPTIONS /' operation and returns the [Response].
-  Future<Response> rootOptionsWithHttpInfo() async {
-    // ignore: prefer_const_declarations
-    final path = r'/';
+  /// 
+  ///
+  /// 
+  Future<Response<Model24hStockdataResponseModel>> twentyfourHourStockdata(
+    String apiKey,
+    String symbol, { 
+    CancelToken cancelToken,
+    Map<String, dynamic> headers,
+    Map<String, dynamic> extra,
+    ValidateStatus validateStatus,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    final _request = RequestOptions(
+      path: r'/v1/stockdata/{symbol}/24h'.replaceAll('{' r'symbol' '}', symbol.toString()),
+      method: 'GET',
+      headers: <String, dynamic>{
+        r'apiKey': apiKey,
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+      contentType: 'application/json',
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
-    // ignore: prefer_final_locals
-    Object? postBody;
+    dynamic _bodyData;
 
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
+    final _response = await _dio.request<dynamic>(
+      _request.path,
+      data: _bodyData,
+      options: _request,
+    );
 
-    const authNames = <String>[];
-    const contentTypes = <String>[];
+    const _responseType = FullType(Model24hStockdataResponseModel);
+    final _responseData = _serializers.deserialize(
+      _response.data,
+      specifiedType: _responseType,
+    ) as Model24hStockdataResponseModel;
 
-
-    return apiClient.invokeAPI(
-      path,
-      'OPTIONS',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
+    return Response<Model24hStockdataResponseModel>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      request: _response.request,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
     );
   }
 
-  Future<void> rootOptions() async {
-    final response = await rootOptionsWithHttpInfo();
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-  }
-
-  /// Performs an HTTP 'GET /v1/stockdata/{symbol}/24h' operation and returns the [Response].
-  /// Parameters:
+  /// 
   ///
-  /// * [String] apiKey (required):
-  ///
-  /// * [String] symbol (required):
-  Future<Response> twentyfourHourStockdataWithHttpInfo(String apiKey, String symbol,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/v1/stockdata/{symbol}/24h'
-      .replaceAll('{symbol}', symbol);
+  /// 
+  Future<Response<Model2yearsStockdataResponseModel>> twoYearsStockdata(
+    String apiKey,
+    String symbol, { 
+    CancelToken cancelToken,
+    Map<String, dynamic> headers,
+    Map<String, dynamic> extra,
+    ValidateStatus validateStatus,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    final _request = RequestOptions(
+      path: r'/v1/stockdata/{symbol}/2years'.replaceAll('{' r'symbol' '}', symbol.toString()),
+      method: 'GET',
+      headers: <String, dynamic>{
+        r'apiKey': apiKey,
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+      contentType: 'application/json',
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
-    // ignore: prefer_final_locals
-    Object? postBody;
+    dynamic _bodyData;
 
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
+    final _response = await _dio.request<dynamic>(
+      _request.path,
+      data: _bodyData,
+      options: _request,
+    );
 
-    headerParams[r'apiKey'] = parameterToString(apiKey);
+    const _responseType = FullType(Model2yearsStockdataResponseModel);
+    final _responseData = _serializers.deserialize(
+      _response.data,
+      specifiedType: _responseType,
+    ) as Model2yearsStockdataResponseModel;
 
-    const authNames = <String>[];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
+    return Response<Model2yearsStockdataResponseModel>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      request: _response.request,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
     );
   }
 
-  /// Parameters:
+  /// 
   ///
-  /// * [String] apiKey (required):
-  ///
-  /// * [String] symbol (required):
-  Future<Model24hStockdataResponseModel?> twentyfourHourStockdata(String apiKey, String symbol,) async {
-    final response = await twentyfourHourStockdataWithHttpInfo(apiKey, symbol,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Model24hStockdataResponseModel',) as Model24hStockdataResponseModel;
-    
-    }
-    return null;
-  }
+  /// 
+  Future<Response<GetUserResponseModel>> userGet(
+    String apiKey, { 
+    CancelToken cancelToken,
+    Map<String, dynamic> headers,
+    Map<String, dynamic> extra,
+    ValidateStatus validateStatus,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    final _request = RequestOptions(
+      path: r'/v1/user',
+      method: 'GET',
+      headers: <String, dynamic>{
+        r'apiKey': apiKey,
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'proddfsswisscognitoAuthorizer029DC9BB',
+            'keyName': 'apiKey',
+            'where': 'header',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+      contentType: 'application/json',
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
-  /// Performs an HTTP 'GET /v1/stockdata/{symbol}/2years' operation and returns the [Response].
-  /// Parameters:
-  ///
-  /// * [String] apiKey (required):
-  ///
-  /// * [String] symbol (required):
-  Future<Response> twoYearsStockdataWithHttpInfo(String apiKey, String symbol,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/v1/stockdata/{symbol}/2years'
-      .replaceAll('{symbol}', symbol);
+    dynamic _bodyData;
 
-    // ignore: prefer_final_locals
-    Object? postBody;
+    final _response = await _dio.request<dynamic>(
+      _request.path,
+      data: _bodyData,
+      options: _request,
+    );
 
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
+    const _responseType = FullType(GetUserResponseModel);
+    final _responseData = _serializers.deserialize(
+      _response.data,
+      specifiedType: _responseType,
+    ) as GetUserResponseModel;
 
-    headerParams[r'apiKey'] = parameterToString(apiKey);
-
-    const authNames = <String>[];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
+    return Response<GetUserResponseModel>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      request: _response.request,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
     );
   }
 
-  /// Parameters:
+  /// 
   ///
-  /// * [String] apiKey (required):
-  ///
-  /// * [String] symbol (required):
-  Future<Model2yearsStockdataResponseModel?> twoYearsStockdata(String apiKey, String symbol,) async {
-    final response = await twoYearsStockdataWithHttpInfo(apiKey, symbol,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Model2yearsStockdataResponseModel',) as Model2yearsStockdataResponseModel;
-    
-    }
-    return null;
+  /// 
+  Future<Response<void>> v1Options({ 
+    CancelToken cancelToken,
+    Map<String, dynamic> headers,
+    Map<String, dynamic> extra,
+    ValidateStatus validateStatus,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    final _request = RequestOptions(
+      path: r'/v1',
+      method: 'OPTIONS',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+      contentType: 'application/json',
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    dynamic _bodyData;
+
+    final _response = await _dio.request<dynamic>(
+      _request.path,
+      data: _bodyData,
+      options: _request,
+    );
+
+    return _response;
   }
 
-  /// Performs an HTTP 'GET /v1/user' operation and returns the [Response].
-  /// Parameters:
+  /// 
   ///
-  /// * [String] apiKey (required):
-  Future<Response> userGetWithHttpInfo(String apiKey,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/v1/user';
+  /// 
+  Future<Response<void>> v1StockdataOptions({ 
+    CancelToken cancelToken,
+    Map<String, dynamic> headers,
+    Map<String, dynamic> extra,
+    ValidateStatus validateStatus,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    final _request = RequestOptions(
+      path: r'/v1/stockdata',
+      method: 'OPTIONS',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+      contentType: 'application/json',
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
-    // ignore: prefer_final_locals
-    Object? postBody;
+    dynamic _bodyData;
 
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
+    final _response = await _dio.request<dynamic>(
+      _request.path,
+      data: _bodyData,
+      options: _request,
+    );
 
-    headerParams[r'apiKey'] = parameterToString(apiKey);
+    return _response;
+  }
 
-    const authNames = <String>['proddfsswisscognitoAuthorizer029DC9BB'];
-    const contentTypes = <String>[];
+  /// 
+  ///
+  /// 
+  Future<Response<void>> v1StockdataSymbol1yearOptions(
+    String symbol, { 
+    CancelToken cancelToken,
+    Map<String, dynamic> headers,
+    Map<String, dynamic> extra,
+    ValidateStatus validateStatus,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    final _request = RequestOptions(
+      path: r'/v1/stockdata/{symbol}/1year'.replaceAll('{' r'symbol' '}', symbol.toString()),
+      method: 'OPTIONS',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+      contentType: 'application/json',
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
+    dynamic _bodyData;
 
-    return apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
+    final _response = await _dio.request<dynamic>(
+      _request.path,
+      data: _bodyData,
+      options: _request,
+    );
+
+    return _response;
+  }
+
+  /// 
+  ///
+  /// 
+  Future<Response<void>> v1StockdataSymbol24hOptions(
+    String symbol, { 
+    CancelToken cancelToken,
+    Map<String, dynamic> headers,
+    Map<String, dynamic> extra,
+    ValidateStatus validateStatus,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    final _request = RequestOptions(
+      path: r'/v1/stockdata/{symbol}/24h'.replaceAll('{' r'symbol' '}', symbol.toString()),
+      method: 'OPTIONS',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+      contentType: 'application/json',
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    dynamic _bodyData;
+
+    final _response = await _dio.request<dynamic>(
+      _request.path,
+      data: _bodyData,
+      options: _request,
+    );
+
+    return _response;
+  }
+
+  /// 
+  ///
+  /// 
+  Future<Response<void>> v1StockdataSymbol2yearsOptions(
+    String symbol, { 
+    CancelToken cancelToken,
+    Map<String, dynamic> headers,
+    Map<String, dynamic> extra,
+    ValidateStatus validateStatus,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    final _request = RequestOptions(
+      path: r'/v1/stockdata/{symbol}/2years'.replaceAll('{' r'symbol' '}', symbol.toString()),
+      method: 'OPTIONS',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+      contentType: 'application/json',
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    dynamic _bodyData;
+
+    final _response = await _dio.request<dynamic>(
+      _request.path,
+      data: _bodyData,
+      options: _request,
+    );
+
+    return _response;
+  }
+
+  /// 
+  ///
+  /// 
+  Future<Response<void>> v1StockdataSymbolMtdOptions(
+    String symbol, { 
+    CancelToken cancelToken,
+    Map<String, dynamic> headers,
+    Map<String, dynamic> extra,
+    ValidateStatus validateStatus,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    final _request = RequestOptions(
+      path: r'/v1/stockdata/{symbol}/mtd'.replaceAll('{' r'symbol' '}', symbol.toString()),
+      method: 'OPTIONS',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+      contentType: 'application/json',
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    dynamic _bodyData;
+
+    final _response = await _dio.request<dynamic>(
+      _request.path,
+      data: _bodyData,
+      options: _request,
+    );
+
+    return _response;
+  }
+
+  /// 
+  ///
+  /// 
+  Future<Response<void>> v1StockdataSymbolOptions(
+    String symbol, { 
+    CancelToken cancelToken,
+    Map<String, dynamic> headers,
+    Map<String, dynamic> extra,
+    ValidateStatus validateStatus,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    final _request = RequestOptions(
+      path: r'/v1/stockdata/{symbol}'.replaceAll('{' r'symbol' '}', symbol.toString()),
+      method: 'OPTIONS',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+      contentType: 'application/json',
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    dynamic _bodyData;
+
+    final _response = await _dio.request<dynamic>(
+      _request.path,
+      data: _bodyData,
+      options: _request,
+    );
+
+    return _response;
+  }
+
+  /// 
+  ///
+  /// 
+  Future<Response<void>> v1StockdataSymbolYtdOptions(
+    String symbol, { 
+    CancelToken cancelToken,
+    Map<String, dynamic> headers,
+    Map<String, dynamic> extra,
+    ValidateStatus validateStatus,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    final _request = RequestOptions(
+      path: r'/v1/stockdata/{symbol}/ytd'.replaceAll('{' r'symbol' '}', symbol.toString()),
+      method: 'OPTIONS',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+      contentType: 'application/json',
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    dynamic _bodyData;
+
+    final _response = await _dio.request<dynamic>(
+      _request.path,
+      data: _bodyData,
+      options: _request,
+    );
+
+    return _response;
+  }
+
+  /// 
+  ///
+  /// 
+  Future<Response<void>> v1UserOptions({ 
+    CancelToken cancelToken,
+    Map<String, dynamic> headers,
+    Map<String, dynamic> extra,
+    ValidateStatus validateStatus,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    final _request = RequestOptions(
+      path: r'/v1/user',
+      method: 'OPTIONS',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+      contentType: 'application/json',
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    dynamic _bodyData;
+
+    final _response = await _dio.request<dynamic>(
+      _request.path,
+      data: _bodyData,
+      options: _request,
+    );
+
+    return _response;
+  }
+
+  /// 
+  ///
+  /// 
+  Future<Response<YtdStockdataResponseModel>> ytdStockdata(
+    String apiKey,
+    String symbol, { 
+    CancelToken cancelToken,
+    Map<String, dynamic> headers,
+    Map<String, dynamic> extra,
+    ValidateStatus validateStatus,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    final _request = RequestOptions(
+      path: r'/v1/stockdata/{symbol}/ytd'.replaceAll('{' r'symbol' '}', symbol.toString()),
+      method: 'GET',
+      headers: <String, dynamic>{
+        r'apiKey': apiKey,
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+      contentType: 'application/json',
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    dynamic _bodyData;
+
+    final _response = await _dio.request<dynamic>(
+      _request.path,
+      data: _bodyData,
+      options: _request,
+    );
+
+    const _responseType = FullType(YtdStockdataResponseModel);
+    final _responseData = _serializers.deserialize(
+      _response.data,
+      specifiedType: _responseType,
+    ) as YtdStockdataResponseModel;
+
+    return Response<YtdStockdataResponseModel>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      request: _response.request,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
     );
   }
 
-  /// Parameters:
-  ///
-  /// * [String] apiKey (required):
-  Future<GetUserResponseModel?> userGet(String apiKey,) async {
-    final response = await userGetWithHttpInfo(apiKey,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'GetUserResponseModel',) as GetUserResponseModel;
-    
-    }
-    return null;
-  }
-
-  /// Performs an HTTP 'OPTIONS /v1' operation and returns the [Response].
-  Future<Response> v1OptionsWithHttpInfo() async {
-    // ignore: prefer_const_declarations
-    final path = r'/v1';
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const authNames = <String>[];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'OPTIONS',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
-    );
-  }
-
-  Future<void> v1Options() async {
-    final response = await v1OptionsWithHttpInfo();
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-  }
-
-  /// Performs an HTTP 'OPTIONS /v1/stockdata' operation and returns the [Response].
-  Future<Response> v1StockdataOptionsWithHttpInfo() async {
-    // ignore: prefer_const_declarations
-    final path = r'/v1/stockdata';
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const authNames = <String>[];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'OPTIONS',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
-    );
-  }
-
-  Future<void> v1StockdataOptions() async {
-    final response = await v1StockdataOptionsWithHttpInfo();
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-  }
-
-  /// Performs an HTTP 'OPTIONS /v1/stockdata/{symbol}/1year' operation and returns the [Response].
-  /// Parameters:
-  ///
-  /// * [String] symbol (required):
-  Future<Response> v1StockdataSymbol1yearOptionsWithHttpInfo(String symbol,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/v1/stockdata/{symbol}/1year'
-      .replaceAll('{symbol}', symbol);
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const authNames = <String>[];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'OPTIONS',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
-    );
-  }
-
-  /// Parameters:
-  ///
-  /// * [String] symbol (required):
-  Future<void> v1StockdataSymbol1yearOptions(String symbol,) async {
-    final response = await v1StockdataSymbol1yearOptionsWithHttpInfo(symbol,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-  }
-
-  /// Performs an HTTP 'OPTIONS /v1/stockdata/{symbol}/24h' operation and returns the [Response].
-  /// Parameters:
-  ///
-  /// * [String] symbol (required):
-  Future<Response> v1StockdataSymbol24hOptionsWithHttpInfo(String symbol,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/v1/stockdata/{symbol}/24h'
-      .replaceAll('{symbol}', symbol);
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const authNames = <String>[];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'OPTIONS',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
-    );
-  }
-
-  /// Parameters:
-  ///
-  /// * [String] symbol (required):
-  Future<void> v1StockdataSymbol24hOptions(String symbol,) async {
-    final response = await v1StockdataSymbol24hOptionsWithHttpInfo(symbol,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-  }
-
-  /// Performs an HTTP 'OPTIONS /v1/stockdata/{symbol}/2years' operation and returns the [Response].
-  /// Parameters:
-  ///
-  /// * [String] symbol (required):
-  Future<Response> v1StockdataSymbol2yearsOptionsWithHttpInfo(String symbol,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/v1/stockdata/{symbol}/2years'
-      .replaceAll('{symbol}', symbol);
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const authNames = <String>[];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'OPTIONS',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
-    );
-  }
-
-  /// Parameters:
-  ///
-  /// * [String] symbol (required):
-  Future<void> v1StockdataSymbol2yearsOptions(String symbol,) async {
-    final response = await v1StockdataSymbol2yearsOptionsWithHttpInfo(symbol,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-  }
-
-  /// Performs an HTTP 'OPTIONS /v1/stockdata/{symbol}/mtd' operation and returns the [Response].
-  /// Parameters:
-  ///
-  /// * [String] symbol (required):
-  Future<Response> v1StockdataSymbolMtdOptionsWithHttpInfo(String symbol,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/v1/stockdata/{symbol}/mtd'
-      .replaceAll('{symbol}', symbol);
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const authNames = <String>[];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'OPTIONS',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
-    );
-  }
-
-  /// Parameters:
-  ///
-  /// * [String] symbol (required):
-  Future<void> v1StockdataSymbolMtdOptions(String symbol,) async {
-    final response = await v1StockdataSymbolMtdOptionsWithHttpInfo(symbol,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-  }
-
-  /// Performs an HTTP 'OPTIONS /v1/stockdata/{symbol}' operation and returns the [Response].
-  /// Parameters:
-  ///
-  /// * [String] symbol (required):
-  Future<Response> v1StockdataSymbolOptionsWithHttpInfo(String symbol,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/v1/stockdata/{symbol}'
-      .replaceAll('{symbol}', symbol);
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const authNames = <String>[];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'OPTIONS',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
-    );
-  }
-
-  /// Parameters:
-  ///
-  /// * [String] symbol (required):
-  Future<void> v1StockdataSymbolOptions(String symbol,) async {
-    final response = await v1StockdataSymbolOptionsWithHttpInfo(symbol,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-  }
-
-  /// Performs an HTTP 'OPTIONS /v1/stockdata/{symbol}/ytd' operation and returns the [Response].
-  /// Parameters:
-  ///
-  /// * [String] symbol (required):
-  Future<Response> v1StockdataSymbolYtdOptionsWithHttpInfo(String symbol,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/v1/stockdata/{symbol}/ytd'
-      .replaceAll('{symbol}', symbol);
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const authNames = <String>[];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'OPTIONS',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
-    );
-  }
-
-  /// Parameters:
-  ///
-  /// * [String] symbol (required):
-  Future<void> v1StockdataSymbolYtdOptions(String symbol,) async {
-    final response = await v1StockdataSymbolYtdOptionsWithHttpInfo(symbol,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-  }
-
-  /// Performs an HTTP 'OPTIONS /v1/user' operation and returns the [Response].
-  Future<Response> v1UserOptionsWithHttpInfo() async {
-    // ignore: prefer_const_declarations
-    final path = r'/v1/user';
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const authNames = <String>[];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'OPTIONS',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
-    );
-  }
-
-  Future<void> v1UserOptions() async {
-    final response = await v1UserOptionsWithHttpInfo();
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-  }
-
-  /// Performs an HTTP 'GET /v1/stockdata/{symbol}/ytd' operation and returns the [Response].
-  /// Parameters:
-  ///
-  /// * [String] apiKey (required):
-  ///
-  /// * [String] symbol (required):
-  Future<Response> ytdStockdataWithHttpInfo(String apiKey, String symbol,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/v1/stockdata/{symbol}/ytd'
-      .replaceAll('{symbol}', symbol);
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    headerParams[r'apiKey'] = parameterToString(apiKey);
-
-    const authNames = <String>[];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
-    );
-  }
-
-  /// Parameters:
-  ///
-  /// * [String] apiKey (required):
-  ///
-  /// * [String] symbol (required):
-  Future<YtdStockdataResponseModel?> ytdStockdata(String apiKey, String symbol,) async {
-    final response = await ytdStockdataWithHttpInfo(apiKey, symbol,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'YtdStockdataResponseModel',) as YtdStockdataResponseModel;
-    
-    }
-    return null;
-  }
 }
