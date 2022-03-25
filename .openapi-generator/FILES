@@ -3,6 +3,9 @@
 README.md
 analysis_options.yaml
 doc/DfsApi.md
+doc/GetUserResponseModel.md
+doc/GetUserResponseModelBody.md
+doc/GetUserResponseModelBodyItem.md
 doc/Model1yearStockdataResponseModel.md
 doc/Model24hStockdataResponseModel.md
 doc/Model2yearsStockdataResponseModel.md
@@ -21,6 +24,9 @@ lib/auth/authentication.dart
 lib/auth/http_basic_auth.dart
 lib/auth/http_bearer_auth.dart
 lib/auth/oauth.dart
+lib/model/get_user_response_model.dart
+lib/model/get_user_response_model_body.dart
+lib/model/get_user_response_model_body_item.dart
 lib/model/model1year_stockdata_response_model.dart
 lib/model/model24h_stockdata_response_model.dart
 lib/model/model2years_stockdata_response_model.dart

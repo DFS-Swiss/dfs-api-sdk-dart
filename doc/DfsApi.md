@@ -9,11 +9,12 @@ All URIs are relative to *https://ryfjnva5k5.execute-api.eu-central-1.amazonaws.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**call1yearStockdata**](DfsApi.md#call1yearstockdata) | **GET** /v1/stockdata/{symbol}/1year | 
-[**call24hStockdata**](DfsApi.md#call24hstockdata) | **GET** /v1/stockdata/{symbol}/24h | 
-[**call2yearsStockdata**](DfsApi.md#call2yearsstockdata) | **GET** /v1/stockdata/{symbol}/2years | 
 [**mtdStockdata**](DfsApi.md#mtdstockdata) | **GET** /v1/stockdata/{symbol}/mtd | 
+[**oneYearStockdata**](DfsApi.md#oneyearstockdata) | **GET** /v1/stockdata/{symbol}/1year | 
 [**rootOptions**](DfsApi.md#rootoptions) | **OPTIONS** / | 
+[**twentyfourHourStockdata**](DfsApi.md#twentyfourhourstockdata) | **GET** /v1/stockdata/{symbol}/24h | 
+[**twoYearsStockdata**](DfsApi.md#twoyearsstockdata) | **GET** /v1/stockdata/{symbol}/2years | 
+[**userGet**](DfsApi.md#userget) | **GET** /v1/user | 
 [**v1Options**](DfsApi.md#v1options) | **OPTIONS** /v1 | 
 [**v1StockdataOptions**](DfsApi.md#v1stockdataoptions) | **OPTIONS** /v1/stockdata | 
 [**v1StockdataSymbol1yearOptions**](DfsApi.md#v1stockdatasymbol1yearoptions) | **OPTIONS** /v1/stockdata/{symbol}/1year | 
@@ -22,137 +23,9 @@ Method | HTTP request | Description
 [**v1StockdataSymbolMtdOptions**](DfsApi.md#v1stockdatasymbolmtdoptions) | **OPTIONS** /v1/stockdata/{symbol}/mtd | 
 [**v1StockdataSymbolOptions**](DfsApi.md#v1stockdatasymboloptions) | **OPTIONS** /v1/stockdata/{symbol} | 
 [**v1StockdataSymbolYtdOptions**](DfsApi.md#v1stockdatasymbolytdoptions) | **OPTIONS** /v1/stockdata/{symbol}/ytd | 
+[**v1UserOptions**](DfsApi.md#v1useroptions) | **OPTIONS** /v1/user | 
 [**ytdStockdata**](DfsApi.md#ytdstockdata) | **GET** /v1/stockdata/{symbol}/ytd | 
 
-
-# **call1yearStockdata**
-> Model1yearStockdataResponseModel call1yearStockdata(apiKey, symbol)
-
-
-
-### Example
-```dart
-import 'package:dfs_sdk/api.dart';
-
-final api_instance = DfsApi();
-final apiKey = apiKey_example; // String | 
-final symbol = symbol_example; // String | 
-
-try {
-    final result = api_instance.call1yearStockdata(apiKey, symbol);
-    print(result);
-} catch (e) {
-    print('Exception when calling DfsApi->call1yearStockdata: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiKey** | **String**|  | 
- **symbol** | **String**|  | 
-
-### Return type
-
-[**Model1yearStockdataResponseModel**](Model1yearStockdataResponseModel.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **call24hStockdata**
-> Model24hStockdataResponseModel call24hStockdata(apiKey, symbol)
-
-
-
-### Example
-```dart
-import 'package:dfs_sdk/api.dart';
-
-final api_instance = DfsApi();
-final apiKey = apiKey_example; // String | 
-final symbol = symbol_example; // String | 
-
-try {
-    final result = api_instance.call24hStockdata(apiKey, symbol);
-    print(result);
-} catch (e) {
-    print('Exception when calling DfsApi->call24hStockdata: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiKey** | **String**|  | 
- **symbol** | **String**|  | 
-
-### Return type
-
-[**Model24hStockdataResponseModel**](Model24hStockdataResponseModel.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **call2yearsStockdata**
-> Model2yearsStockdataResponseModel call2yearsStockdata(apiKey, symbol)
-
-
-
-### Example
-```dart
-import 'package:dfs_sdk/api.dart';
-
-final api_instance = DfsApi();
-final apiKey = apiKey_example; // String | 
-final symbol = symbol_example; // String | 
-
-try {
-    final result = api_instance.call2yearsStockdata(apiKey, symbol);
-    print(result);
-} catch (e) {
-    print('Exception when calling DfsApi->call2yearsStockdata: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiKey** | **String**|  | 
- **symbol** | **String**|  | 
-
-### Return type
-
-[**Model2yearsStockdataResponseModel**](Model2yearsStockdataResponseModel.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **mtdStockdata**
 > MtdStockdataResponseModel mtdStockdata(apiKey, symbol)
@@ -185,6 +58,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MtdStockdataResponseModel**](MtdStockdataResponseModel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **oneYearStockdata**
+> Model1yearStockdataResponseModel oneYearStockdata(apiKey, symbol)
+
+
+
+### Example
+```dart
+import 'package:dfs_sdk/api.dart';
+
+final api_instance = DfsApi();
+final apiKey = apiKey_example; // String | 
+final symbol = symbol_example; // String | 
+
+try {
+    final result = api_instance.oneYearStockdata(apiKey, symbol);
+    print(result);
+} catch (e) {
+    print('Exception when calling DfsApi->oneYearStockdata: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **apiKey** | **String**|  | 
+ **symbol** | **String**|  | 
+
+### Return type
+
+[**Model1yearStockdataResponseModel**](Model1yearStockdataResponseModel.md)
 
 ### Authorization
 
@@ -230,6 +146,137 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **twentyfourHourStockdata**
+> Model24hStockdataResponseModel twentyfourHourStockdata(apiKey, symbol)
+
+
+
+### Example
+```dart
+import 'package:dfs_sdk/api.dart';
+
+final api_instance = DfsApi();
+final apiKey = apiKey_example; // String | 
+final symbol = symbol_example; // String | 
+
+try {
+    final result = api_instance.twentyfourHourStockdata(apiKey, symbol);
+    print(result);
+} catch (e) {
+    print('Exception when calling DfsApi->twentyfourHourStockdata: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **apiKey** | **String**|  | 
+ **symbol** | **String**|  | 
+
+### Return type
+
+[**Model24hStockdataResponseModel**](Model24hStockdataResponseModel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **twoYearsStockdata**
+> Model2yearsStockdataResponseModel twoYearsStockdata(apiKey, symbol)
+
+
+
+### Example
+```dart
+import 'package:dfs_sdk/api.dart';
+
+final api_instance = DfsApi();
+final apiKey = apiKey_example; // String | 
+final symbol = symbol_example; // String | 
+
+try {
+    final result = api_instance.twoYearsStockdata(apiKey, symbol);
+    print(result);
+} catch (e) {
+    print('Exception when calling DfsApi->twoYearsStockdata: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **apiKey** | **String**|  | 
+ **symbol** | **String**|  | 
+
+### Return type
+
+[**Model2yearsStockdataResponseModel**](Model2yearsStockdataResponseModel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **userGet**
+> GetUserResponseModel userGet(apiKey)
+
+
+
+### Example
+```dart
+import 'package:dfs_sdk/api.dart';
+// TODO Configure API key authorization: proddfsswisscognitoAuthorizer029DC9BB
+//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKeyPrefix = 'Bearer';
+
+final api_instance = DfsApi();
+final apiKey = apiKey_example; // String | 
+
+try {
+    final result = api_instance.userGet(apiKey);
+    print(result);
+} catch (e) {
+    print('Exception when calling DfsApi->userGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **apiKey** | **String**|  | 
+
+### Return type
+
+[**GetUserResponseModel**](GetUserResponseModel.md)
+
+### Authorization
+
+[proddfsswisscognitoAuthorizer029DC9BB](../README.md#proddfsswisscognitoAuthorizer029DC9BB)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -529,6 +576,42 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v1UserOptions**
+> v1UserOptions()
+
+
+
+### Example
+```dart
+import 'package:dfs_sdk/api.dart';
+
+final api_instance = DfsApi();
+
+try {
+    api_instance.v1UserOptions();
+} catch (e) {
+    print('Exception when calling DfsApi->v1UserOptions: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
 
 ### Return type
 

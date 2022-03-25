@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-import 'package:openapi/api.dart';
+import 'package:dfs_sdk/api.dart';
 import 'package:test/test.dart';
 
 
@@ -17,18 +17,8 @@ void main() {
   // final instance = DfsApi();
 
   group('tests for DfsApi', () {
-    //Future<Model1yearStockdataResponseModel> call1yearStockdata(String apiKey, String symbol) async
-    test('test call1yearStockdata', () async {
-      // TODO
-    });
-
-    //Future<Model24hStockdataResponseModel> call24hStockdata(String apiKey, String symbol) async
-    test('test call24hStockdata', () async {
-      // TODO
-    });
-
-    //Future<Model2yearsStockdataResponseModel> call2yearsStockdata(String apiKey, String symbol) async
-    test('test call2yearsStockdata', () async {
+    //Future<GetUserResponseModel> getUser(String apiKey) async
+    test('test getUser', () async {
       // TODO
     });
 
@@ -37,8 +27,23 @@ void main() {
       // TODO
     });
 
+    //Future<Model1yearStockdataResponseModel> oneYearStockdata(String apiKey, String symbol) async
+    test('test oneYearStockdata', () async {
+      // TODO
+    });
+
     //Future rootOptions() async
     test('test rootOptions', () async {
+      // TODO
+    });
+
+    //Future<Model24hStockdataResponseModel> twentyfourHourStockdata(String apiKey, String symbol) async
+    test('test twentyfourHourStockdata', () async {
+      // TODO
+    });
+
+    //Future<Model2yearsStockdataResponseModel> twoYearsStockdata(String apiKey, String symbol) async
+    test('test twoYearsStockdata', () async {
       // TODO
     });
 
@@ -79,6 +84,11 @@ void main() {
 
     //Future v1StockdataSymbolYtdOptions(String symbol) async
     test('test v1StockdataSymbolYtdOptions', () async {
+      // TODO
+    });
+
+    //Future v1UserOptions() async
+    test('test v1UserOptions', () async {
       // TODO
     });
 

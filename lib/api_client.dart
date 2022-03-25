@@ -12,6 +12,8 @@ part of openapi.api;
 
 class ApiClient {
   ApiClient({this.basePath = 'https://ryfjnva5k5.execute-api.eu-central-1.amazonaws.com/prod'}) {
+    // Setup authentications (key: authentication name, value: authentication).
+    _authentications[r'proddfsswisscognitoAuthorizer029DC9BB'] = ApiKeyAuth('header', 'apiKey');
   }
 
   final String basePath;
@@ -207,6 +209,12 @@ class ApiClient {
           }
           final valueString = '$value'.toLowerCase();
           return valueString == 'true' || valueString == '1';
+        case 'GetUserResponseModel':
+          return GetUserResponseModel.fromJson(value);
+        case 'GetUserResponseModelBody':
+          return GetUserResponseModelBody.fromJson(value);
+        case 'GetUserResponseModelBodyItem':
+          return GetUserResponseModelBodyItem.fromJson(value);
         case 'Model1yearStockdataResponseModel':
           return Model1yearStockdataResponseModel.fromJson(value);
         case 'Model24hStockdataResponseModel':
