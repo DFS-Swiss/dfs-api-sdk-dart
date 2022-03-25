@@ -1,95 +1,143 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.7
+// @dart=2.12
 
-// ignore_for_file: unused_import
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
 
-import 'package:dfs_sdk/model/get_user_response_model_body.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+part of openapi.api;
 
-part 'get_user_response_model.g.dart';
+class GetUserResponseModel {
+  /// Returns a new [GetUserResponseModel] instance.
+  GetUserResponseModel({
+    required this.message,
+    this.body,
+    this.statusCode,
+  });
 
-abstract class GetUserResponseModel implements Built<GetUserResponseModel, GetUserResponseModelBuilder> {
+  String message;
 
-    @BuiltValueField(wireName: r'message')
-    String get message;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  GetUserResponseModelBody? body;
 
-    @nullable
-    @BuiltValueField(wireName: r'body')
-    GetUserResponseModelBody get body;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  num? statusCode;
 
-    @nullable
-    @BuiltValueField(wireName: r'statusCode')
-    num get statusCode;
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is GetUserResponseModel &&
+     other.message == message &&
+     other.body == body &&
+     other.statusCode == statusCode;
 
-    GetUserResponseModel._();
+  @override
+  int get hashCode =>
+    // ignore: unnecessary_parenthesis
+    (message.hashCode) +
+    (body == null ? 0 : body!.hashCode) +
+    (statusCode == null ? 0 : statusCode!.hashCode);
 
-    static void _initializeBuilder(GetUserResponseModelBuilder b) => b;
+  @override
+  String toString() => 'GetUserResponseModel[message=$message, body=$body, statusCode=$statusCode]';
 
-    factory GetUserResponseModel([void updates(GetUserResponseModelBuilder b)]) = _$GetUserResponseModel;
-
-    @BuiltValueSerializer(custom: true)
-    static Serializer<GetUserResponseModel> get serializer => _$GetUserResponseModelSerializer();
-}
-
-class _$GetUserResponseModelSerializer implements StructuredSerializer<GetUserResponseModel> {
-
-    @override
-    final Iterable<Type> types = const [GetUserResponseModel, _$GetUserResponseModel];
-    @override
-    final String wireName = r'GetUserResponseModel';
-
-    @override
-    Iterable<Object> serialize(Serializers serializers, GetUserResponseModel object,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = <Object>[];
-        result
-            ..add(r'message')
-            ..add(serializers.serialize(object.message,
-                specifiedType: const FullType(String)));
-        if (object.body != null) {
-            result
-                ..add(r'body')
-                ..add(serializers.serialize(object.body,
-                    specifiedType: const FullType(GetUserResponseModelBody)));
-        }
-        if (object.statusCode != null) {
-            result
-                ..add(r'statusCode')
-                ..add(serializers.serialize(object.statusCode,
-                    specifiedType: const FullType(num)));
-        }
-        return result;
+  Map<String, dynamic> toJson() {
+    final json = <String, dynamic>{};
+      json[r'message'] = message;
+    if (body != null) {
+      json[r'body'] = body;
     }
-
-    @override
-    GetUserResponseModel deserialize(Serializers serializers, Iterable<Object> serialized,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = GetUserResponseModelBuilder();
-
-        final iterator = serialized.iterator;
-        while (iterator.moveNext()) {
-            final key = iterator.current as String;
-            iterator.moveNext();
-            final dynamic value = iterator.current;
-            switch (key) {
-                case r'message':
-                    result.message = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    break;
-                case r'body':
-                    result.body.replace(serializers.deserialize(value,
-                        specifiedType: const FullType(GetUserResponseModelBody)) as GetUserResponseModelBody);
-                    break;
-                case r'statusCode':
-                    result.statusCode = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
-                    break;
-            }
-        }
-        return result.build();
+    if (statusCode != null) {
+      json[r'statusCode'] = statusCode;
     }
+    return json;
+  }
+
+  /// Returns a new [GetUserResponseModel] instance and imports its values from
+  /// [value] if it's a [Map], null otherwise.
+  // ignore: prefer_constructors_over_static_methods
+  static GetUserResponseModel? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
+
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "GetUserResponseModel[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "GetUserResponseModel[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return GetUserResponseModel(
+        message: mapValueOfType<String>(json, r'message')!,
+        body: GetUserResponseModelBody.fromJson(json[r'body']),
+        statusCode: json[r'statusCode'] == null
+            ? null
+            : num.parse(json[r'statusCode'].toString()),
+      );
+    }
+    return null;
+  }
+
+  static List<GetUserResponseModel>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <GetUserResponseModel>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = GetUserResponseModel.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
+
+  static Map<String, GetUserResponseModel> mapFromJson(dynamic json) {
+    final map = <String, GetUserResponseModel>{};
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = GetUserResponseModel.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
+    }
+    return map;
+  }
+
+  // maps a json object with a list of GetUserResponseModel-objects as value to a dart map
+  static Map<String, List<GetUserResponseModel>> mapListFromJson(dynamic json, {bool growable = false,}) {
+    final map = <String, List<GetUserResponseModel>>{};
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = GetUserResponseModel.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
+    }
+    return map;
+  }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+    'message',
+  };
 }
 

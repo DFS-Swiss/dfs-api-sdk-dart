@@ -9,7 +9,7 @@ import 'package:dfs_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **symbol** | **String** |  | 
-**price** | **num** |  | 
+**price** | **double** |  | 
 **name** | **String** |  | 
 **currency** | **String** |  | 
 **time** | [**DateTime**](DateTime.md) |  | 

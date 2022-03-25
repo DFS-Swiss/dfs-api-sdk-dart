@@ -1,121 +1,152 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.7
+// @dart=2.12
 
-// ignore_for_file: unused_import
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
 
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+part of openapi.api;
 
-part 'ytd_stockdata_response_model_body_item.g.dart';
+class YtdStockdataResponseModelBodyItem {
+  /// Returns a new [YtdStockdataResponseModelBodyItem] instance.
+  YtdStockdataResponseModelBodyItem({
+    required this.symbol,
+    required this.price,
+    required this.name,
+    required this.currency,
+    required this.time,
+    required this.id,
+  });
 
-abstract class YtdStockdataResponseModelBodyItem implements Built<YtdStockdataResponseModelBodyItem, YtdStockdataResponseModelBodyItemBuilder> {
+  String symbol;
 
-    @BuiltValueField(wireName: r'symbol')
-    String get symbol;
+  /// Minimum value: 0
+  double price;
 
-    @BuiltValueField(wireName: r'price')
-    num get price;
+  String name;
 
-    @BuiltValueField(wireName: r'name')
-    String get name;
+  String currency;
 
-    @BuiltValueField(wireName: r'currency')
-    String get currency;
+  DateTime time;
 
-    @BuiltValueField(wireName: r'time')
-    DateTime get time;
+  String id;
 
-    @BuiltValueField(wireName: r'_id')
-    String get id;
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is YtdStockdataResponseModelBodyItem &&
+     other.symbol == symbol &&
+     other.price == price &&
+     other.name == name &&
+     other.currency == currency &&
+     other.time == time &&
+     other.id == id;
 
-    YtdStockdataResponseModelBodyItem._();
+  @override
+  int get hashCode =>
+    // ignore: unnecessary_parenthesis
+    (symbol.hashCode) +
+    (price.hashCode) +
+    (name.hashCode) +
+    (currency.hashCode) +
+    (time.hashCode) +
+    (id.hashCode);
 
-    static void _initializeBuilder(YtdStockdataResponseModelBodyItemBuilder b) => b;
+  @override
+  String toString() => 'YtdStockdataResponseModelBodyItem[symbol=$symbol, price=$price, name=$name, currency=$currency, time=$time, id=$id]';
 
-    factory YtdStockdataResponseModelBodyItem([void updates(YtdStockdataResponseModelBodyItemBuilder b)]) = _$YtdStockdataResponseModelBodyItem;
+  Map<String, dynamic> toJson() {
+    final json = <String, dynamic>{};
+      json[r'symbol'] = symbol;
+      json[r'price'] = price;
+      json[r'name'] = name;
+      json[r'currency'] = currency;
+      json[r'time'] = time.toUtc().toIso8601String();
+      json[r'_id'] = id;
+    return json;
+  }
 
-    @BuiltValueSerializer(custom: true)
-    static Serializer<YtdStockdataResponseModelBodyItem> get serializer => _$YtdStockdataResponseModelBodyItemSerializer();
-}
+  /// Returns a new [YtdStockdataResponseModelBodyItem] instance and imports its values from
+  /// [value] if it's a [Map], null otherwise.
+  // ignore: prefer_constructors_over_static_methods
+  static YtdStockdataResponseModelBodyItem? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-class _$YtdStockdataResponseModelBodyItemSerializer implements StructuredSerializer<YtdStockdataResponseModelBodyItem> {
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "YtdStockdataResponseModelBodyItem[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "YtdStockdataResponseModelBodyItem[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
 
-    @override
-    final Iterable<Type> types = const [YtdStockdataResponseModelBodyItem, _$YtdStockdataResponseModelBodyItem];
-    @override
-    final String wireName = r'YtdStockdataResponseModelBodyItem';
-
-    @override
-    Iterable<Object> serialize(Serializers serializers, YtdStockdataResponseModelBodyItem object,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = <Object>[];
-        result
-            ..add(r'symbol')
-            ..add(serializers.serialize(object.symbol,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'price')
-            ..add(serializers.serialize(object.price,
-                specifiedType: const FullType(num)));
-        result
-            ..add(r'name')
-            ..add(serializers.serialize(object.name,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'currency')
-            ..add(serializers.serialize(object.currency,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'time')
-            ..add(serializers.serialize(object.time,
-                specifiedType: const FullType(DateTime)));
-        result
-            ..add(r'_id')
-            ..add(serializers.serialize(object.id,
-                specifiedType: const FullType(String)));
-        return result;
+      return YtdStockdataResponseModelBodyItem(
+        symbol: mapValueOfType<String>(json, r'symbol')!,
+        price: mapValueOfType<double>(json, r'price')!,
+        name: mapValueOfType<String>(json, r'name')!,
+        currency: mapValueOfType<String>(json, r'currency')!,
+        time: mapDateTime(json, r'time', '')!,
+        id: mapValueOfType<String>(json, r'_id')!,
+      );
     }
+    return null;
+  }
 
-    @override
-    YtdStockdataResponseModelBodyItem deserialize(Serializers serializers, Iterable<Object> serialized,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = YtdStockdataResponseModelBodyItemBuilder();
-
-        final iterator = serialized.iterator;
-        while (iterator.moveNext()) {
-            final key = iterator.current as String;
-            iterator.moveNext();
-            final dynamic value = iterator.current;
-            switch (key) {
-                case r'symbol':
-                    result.symbol = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    break;
-                case r'price':
-                    result.price = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
-                    break;
-                case r'name':
-                    result.name = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    break;
-                case r'currency':
-                    result.currency = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    break;
-                case r'time':
-                    result.time = serializers.deserialize(value,
-                        specifiedType: const FullType(DateTime)) as DateTime;
-                    break;
-                case r'_id':
-                    result.id = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    break;
-            }
+  static List<YtdStockdataResponseModelBodyItem>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <YtdStockdataResponseModelBodyItem>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = YtdStockdataResponseModelBodyItem.fromJson(row);
+        if (value != null) {
+          result.add(value);
         }
-        return result.build();
+      }
     }
+    return result.toList(growable: growable);
+  }
+
+  static Map<String, YtdStockdataResponseModelBodyItem> mapFromJson(dynamic json) {
+    final map = <String, YtdStockdataResponseModelBodyItem>{};
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = YtdStockdataResponseModelBodyItem.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
+    }
+    return map;
+  }
+
+  // maps a json object with a list of YtdStockdataResponseModelBodyItem-objects as value to a dart map
+  static Map<String, List<YtdStockdataResponseModelBodyItem>> mapListFromJson(dynamic json, {bool growable = false,}) {
+    final map = <String, List<YtdStockdataResponseModelBodyItem>>{};
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = YtdStockdataResponseModelBodyItem.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
+    }
+    return map;
+  }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+    'symbol',
+    'price',
+    'name',
+    'currency',
+    'time',
+    '_id',
+  };
 }
 
