@@ -17,6 +17,11 @@ void main() {
   // final instance = DfsApi();
 
   group('tests for DfsApi', () {
+    //Future<ListSymbols> listSymbols(String apiKey) async
+    test('test listSymbols', () async {
+      // TODO
+    });
+
     //Future<MtdStockdataResponseModel> mtdStockdata(String apiKey, String symbol) async
     test('test mtdStockdata', () async {
       // TODO
@@ -49,6 +54,11 @@ void main() {
 
     //Future v1Options() async
     test('test v1Options', () async {
+      // TODO
+    });
+
+    //Future v1StockdataListOptions() async
+    test('test v1StockdataListOptions', () async {
       // TODO
     });
 

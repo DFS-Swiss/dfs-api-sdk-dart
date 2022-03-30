@@ -9,6 +9,7 @@ All URIs are relative to *https://ryfjnva5k5.execute-api.eu-central-1.amazonaws.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**listSymbols**](DfsApi.md#listsymbols) | **GET** /v1/stockdata/list | 
 [**mtdStockdata**](DfsApi.md#mtdstockdata) | **GET** /v1/stockdata/{symbol}/mtd | 
 [**oneYearStockdata**](DfsApi.md#oneyearstockdata) | **GET** /v1/stockdata/{symbol}/1year | 
 [**rootOptions**](DfsApi.md#rootoptions) | **OPTIONS** / | 
@@ -16,6 +17,7 @@ Method | HTTP request | Description
 [**twoYearsStockdata**](DfsApi.md#twoyearsstockdata) | **GET** /v1/stockdata/{symbol}/2years | 
 [**userGet**](DfsApi.md#userget) | **GET** /v1/user | 
 [**v1Options**](DfsApi.md#v1options) | **OPTIONS** /v1 | 
+[**v1StockdataListOptions**](DfsApi.md#v1stockdatalistoptions) | **OPTIONS** /v1/stockdata/list | 
 [**v1StockdataOptions**](DfsApi.md#v1stockdataoptions) | **OPTIONS** /v1/stockdata | 
 [**v1StockdataSymbol1yearOptions**](DfsApi.md#v1stockdatasymbol1yearoptions) | **OPTIONS** /v1/stockdata/{symbol}/1year | 
 [**v1StockdataSymbol24hOptions**](DfsApi.md#v1stockdatasymbol24hoptions) | **OPTIONS** /v1/stockdata/{symbol}/24h | 
@@ -26,6 +28,47 @@ Method | HTTP request | Description
 [**v1UserOptions**](DfsApi.md#v1useroptions) | **OPTIONS** /v1/user | 
 [**ytdStockdata**](DfsApi.md#ytdstockdata) | **GET** /v1/stockdata/{symbol}/ytd | 
 
+
+# **listSymbols**
+> ListSymbols listSymbols(apiKey)
+
+
+
+### Example
+```dart
+import 'package:dfs_sdk/api.dart';
+
+final api_instance = DfsApi();
+final apiKey = apiKey_example; // String | 
+
+try {
+    final result = api_instance.listSymbols(apiKey);
+    print(result);
+} catch (e) {
+    print('Exception when calling DfsApi->listSymbols: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **apiKey** | **String**|  | 
+
+### Return type
+
+[**ListSymbols**](ListSymbols.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **mtdStockdata**
 > MtdStockdataResponseModel mtdStockdata(apiKey, symbol)
@@ -295,6 +338,42 @@ try {
     api_instance.v1Options();
 } catch (e) {
     print('Exception when calling DfsApi->v1Options: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v1StockdataListOptions**
+> v1StockdataListOptions()
+
+
+
+### Example
+```dart
+import 'package:dfs_sdk/api.dart';
+
+final api_instance = DfsApi();
+
+try {
+    api_instance.v1StockdataListOptions();
+} catch (e) {
+    print('Exception when calling DfsApi->v1StockdataListOptions: $e\n');
 }
 ```
 

@@ -215,6 +215,16 @@ class ApiClient {
           return GetUserResponseModelBody.fromJson(value);
         case 'GetUserResponseModelBodyItem':
           return GetUserResponseModelBodyItem.fromJson(value);
+        case 'ListSymbols':
+          return ListSymbols.fromJson(value);
+        case 'ListSymbolsBody':
+          return ListSymbolsBody.fromJson(value);
+        case 'ListSymbolsBodyData':
+          return ListSymbolsBodyData.fromJson(value);
+        case 'ListSymbolsBodyItems':
+          return ListSymbolsBodyItems.fromJson(value);
+        case 'ListSymbolsBodySymbol':
+          return ListSymbolsBodySymbol.fromJson(value);
         case 'Model1yearStockdataResponseModel':
           return Model1yearStockdataResponseModel.fromJson(value);
         case 'Model24hStockdataResponseModel':
@@ -227,8 +237,6 @@ class ApiClient {
           return YtdStockdataResponseModel.fromJson(value);
         case 'YtdStockdataResponseModelBody':
           return YtdStockdataResponseModelBody.fromJson(value);
-        case 'YtdStockdataResponseModelBodyItem':
-          return YtdStockdataResponseModelBodyItem.fromJson(value);
         default:
           dynamic match;
           if (value is List && (match = _regList.firstMatch(targetType)?.group(1)) != null) {

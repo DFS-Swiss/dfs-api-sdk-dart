@@ -32,13 +32,17 @@ part 'api/dfs_api.dart';
 part 'model/get_user_response_model.dart';
 part 'model/get_user_response_model_body.dart';
 part 'model/get_user_response_model_body_item.dart';
+part 'model/list_symbols.dart';
+part 'model/list_symbols_body.dart';
+part 'model/list_symbols_body_data.dart';
+part 'model/list_symbols_body_items.dart';
+part 'model/list_symbols_body_symbol.dart';
 part 'model/model1year_stockdata_response_model.dart';
 part 'model/model24h_stockdata_response_model.dart';
 part 'model/model2years_stockdata_response_model.dart';
 part 'model/mtd_stockdata_response_model.dart';
 part 'model/ytd_stockdata_response_model.dart';
 part 'model/ytd_stockdata_response_model_body.dart';
-part 'model/ytd_stockdata_response_model_body_item.dart';
 
 
 const _delimiters = {'csv': ',', 'ssv': ' ', 'tsv': '\t', 'pipes': '|'};

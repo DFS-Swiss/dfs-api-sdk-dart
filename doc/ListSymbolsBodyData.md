@@ -1,4 +1,4 @@
-# dfs_sdk.model.YtdStockdataResponseModelBody
+# dfs_sdk.model.ListSymbolsBodyData
 
 ## Load the model package
 ```dart
@@ -8,7 +8,12 @@ import 'package:dfs_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**item** | [**ListSymbolsBodyData**](ListSymbolsBodyData.md) |  | [optional] 
+**symbol** | **String** |  | 
+**price** | **double** |  | 
+**name** | **String** |  | 
+**currency** | **String** |  | 
+**time** | [**DateTime**](DateTime.md) |  | 
+**id** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

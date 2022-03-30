@@ -22,7 +22,7 @@ class YtdStockdataResponseModelBody {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  YtdStockdataResponseModelBodyItem? item;
+  ListSymbolsBodyData? item;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is YtdStockdataResponseModelBody &&
@@ -63,7 +63,7 @@ class YtdStockdataResponseModelBody {
       }());
 
       return YtdStockdataResponseModelBody(
-        item: YtdStockdataResponseModelBodyItem.fromJson(json[r'item']),
+        item: ListSymbolsBodyData.fromJson(json[r'item']),
       );
     }
     return null;
