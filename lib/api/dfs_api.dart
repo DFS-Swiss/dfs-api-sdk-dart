@@ -16,6 +16,62 @@ class DfsApi {
 
   final ApiClient apiClient;
 
+  /// Performs an HTTP 'GET /v1/stockdata/{symbol}' operation and returns the [Response].
+  /// Parameters:
+  ///
+  /// * [String] symbol (required):
+  ///
+  /// * [String] apiKey (required):
+  Future<Response> getStockdataInfoWithHttpInfo(String symbol, String apiKey,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/v1/stockdata/{symbol}'
+      .replaceAll('{symbol}', symbol);
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    headerParams[r'apiKey'] = parameterToString(apiKey);
+
+    const authNames = <String>['proddfsswisscognitoAuthorizer029DC9BB'];
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+      authNames,
+    );
+  }
+
+  /// Parameters:
+  ///
+  /// * [String] symbol (required):
+  ///
+  /// * [String] apiKey (required):
+  Future<GetStockdataInfoResponseModel?> getStockdataInfo(String symbol, String apiKey,) async {
+    final response = await getStockdataInfoWithHttpInfo(symbol, apiKey,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'GetStockdataInfoResponseModel',) as GetStockdataInfoResponseModel;
+    
+    }
+    return null;
+  }
+
   /// Performs an HTTP 'GET /v1/stockdata/list' operation and returns the [Response].
   /// Parameters:
   ///

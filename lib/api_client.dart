@@ -209,6 +209,12 @@ class ApiClient {
           }
           final valueString = '$value'.toLowerCase();
           return valueString == 'true' || valueString == '1';
+        case 'GetStockdataInfoResponseModel':
+          return GetStockdataInfoResponseModel.fromJson(value);
+        case 'GetStockdataInfoResponseModelBody':
+          return GetStockdataInfoResponseModelBody.fromJson(value);
+        case 'GetStockdataInfoResponseModelBodyItem':
+          return GetStockdataInfoResponseModelBodyItem.fromJson(value);
         case 'GetUserResponseModel':
           return GetUserResponseModel.fromJson(value);
         case 'GetUserResponseModelBody':
@@ -223,8 +229,6 @@ class ApiClient {
           return ListSymbolsBodyData.fromJson(value);
         case 'ListSymbolsBodyItems':
           return ListSymbolsBodyItems.fromJson(value);
-        case 'ListSymbolsBodySymbol':
-          return ListSymbolsBodySymbol.fromJson(value);
         case 'Model1yearStockdataResponseModel':
           return Model1yearStockdataResponseModel.fromJson(value);
         case 'Model24hStockdataResponseModel':

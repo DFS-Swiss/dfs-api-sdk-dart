@@ -17,6 +17,11 @@ void main() {
   // final instance = DfsApi();
 
   group('tests for DfsApi', () {
+    //Future<GetStockdataInfoResponseModel> getStockdataInfo(String symbol, String apiKey) async
+    test('test getStockdataInfo', () async {
+      // TODO
+    });
+
     //Future<ListSymbols> listSymbols(String apiKey) async
     test('test listSymbols', () async {
       // TODO

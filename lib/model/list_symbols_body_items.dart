@@ -17,7 +17,7 @@ class ListSymbolsBodyItems {
     this.data = const [],
   });
 
-  ListSymbolsBodySymbol symbol;
+  GetStockdataInfoResponseModelBodyItem symbol;
 
   List<ListSymbolsBodyData> data;
 
@@ -61,7 +61,7 @@ class ListSymbolsBodyItems {
       }());
 
       return ListSymbolsBodyItems(
-        symbol: ListSymbolsBodySymbol.fromJson(json[r'symbol'])!,
+        symbol: GetStockdataInfoResponseModelBodyItem.fromJson(json[r'symbol'])!,
         data: ListSymbolsBodyData.listFromJson(json[r'data'])!,
       );
     }

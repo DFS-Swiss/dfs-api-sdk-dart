@@ -9,6 +9,7 @@ All URIs are relative to *https://ryfjnva5k5.execute-api.eu-central-1.amazonaws.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**getStockdataInfo**](DfsApi.md#getstockdatainfo) | **GET** /v1/stockdata/{symbol} | 
 [**listSymbols**](DfsApi.md#listsymbols) | **GET** /v1/stockdata/list | 
 [**mtdStockdata**](DfsApi.md#mtdstockdata) | **GET** /v1/stockdata/{symbol}/mtd | 
 [**oneYearStockdata**](DfsApi.md#oneyearstockdata) | **GET** /v1/stockdata/{symbol}/1year | 
@@ -28,6 +29,53 @@ Method | HTTP request | Description
 [**v1UserOptions**](DfsApi.md#v1useroptions) | **OPTIONS** /v1/user | 
 [**ytdStockdata**](DfsApi.md#ytdstockdata) | **GET** /v1/stockdata/{symbol}/ytd | 
 
+
+# **getStockdataInfo**
+> GetStockdataInfoResponseModel getStockdataInfo(symbol, apiKey)
+
+
+
+### Example
+```dart
+import 'package:dfs_sdk/api.dart';
+// TODO Configure API key authorization: proddfsswisscognitoAuthorizer029DC9BB
+//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKeyPrefix = 'Bearer';
+
+final api_instance = DfsApi();
+final symbol = symbol_example; // String | 
+final apiKey = apiKey_example; // String | 
+
+try {
+    final result = api_instance.getStockdataInfo(symbol, apiKey);
+    print(result);
+} catch (e) {
+    print('Exception when calling DfsApi->getStockdataInfo: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **String**|  | 
+ **apiKey** | **String**|  | 
+
+### Return type
+
+[**GetStockdataInfoResponseModel**](GetStockdataInfoResponseModel.md)
+
+### Authorization
+
+[proddfsswisscognitoAuthorizer029DC9BB](../README.md#proddfsswisscognitoAuthorizer029DC9BB)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **listSymbols**
 > ListSymbols listSymbols(apiKey)

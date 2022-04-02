@@ -4,6 +4,9 @@
 README.md
 analysis_options.yaml
 doc/DfsApi.md
+doc/GetStockdataInfoResponseModel.md
+doc/GetStockdataInfoResponseModelBody.md
+doc/GetStockdataInfoResponseModelBodyItem.md
 doc/GetUserResponseModel.md
 doc/GetUserResponseModelBody.md
 doc/GetUserResponseModelBodyItem.md
@@ -11,7 +14,6 @@ doc/ListSymbols.md
 doc/ListSymbolsBody.md
 doc/ListSymbolsBodyData.md
 doc/ListSymbolsBodyItems.md
-doc/ListSymbolsBodySymbol.md
 doc/Model1yearStockdataResponseModel.md
 doc/Model24hStockdataResponseModel.md
 doc/Model2yearsStockdataResponseModel.md
@@ -29,6 +31,9 @@ lib/auth/authentication.dart
 lib/auth/http_basic_auth.dart
 lib/auth/http_bearer_auth.dart
 lib/auth/oauth.dart
+lib/model/get_stockdata_info_response_model.dart
+lib/model/get_stockdata_info_response_model_body.dart
+lib/model/get_stockdata_info_response_model_body_item.dart
 lib/model/get_user_response_model.dart
 lib/model/get_user_response_model_body.dart
 lib/model/get_user_response_model_body_item.dart
@@ -36,7 +41,6 @@ lib/model/list_symbols.dart
 lib/model/list_symbols_body.dart
 lib/model/list_symbols_body_data.dart
 lib/model/list_symbols_body_items.dart
-lib/model/list_symbols_body_symbol.dart
 lib/model/model1year_stockdata_response_model.dart
 lib/model/model24h_stockdata_response_model.dart
 lib/model/model2years_stockdata_response_model.dart
@@ -45,12 +49,14 @@ lib/model/ytd_stockdata_response_model.dart
 lib/model/ytd_stockdata_response_model_body.dart
 pubspec.yaml
 test/dfs_api_test.dart
+test/get_stockdata_info_response_model_body_item_test.dart
+test/get_stockdata_info_response_model_body_test.dart
+test/get_stockdata_info_response_model_test.dart
 test/get_user_response_model_body_item_test.dart
 test/get_user_response_model_body_test.dart
 test/get_user_response_model_test.dart
 test/list_symbols_body_data_test.dart
 test/list_symbols_body_items_test.dart
-test/list_symbols_body_symbol_test.dart
 test/list_symbols_body_test.dart
 test/list_symbols_test.dart
 test/model1year_stockdata_response_model_test.dart
