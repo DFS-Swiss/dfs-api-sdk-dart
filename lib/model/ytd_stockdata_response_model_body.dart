@@ -13,34 +13,26 @@ part of openapi.api;
 class YtdStockdataResponseModelBody {
   /// Returns a new [YtdStockdataResponseModelBody] instance.
   YtdStockdataResponseModelBody({
-    this.item,
+    this.items = const [],
   });
 
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  ListSymbolsBodyData? item;
+  List<ListSymbolsBodyData> items;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is YtdStockdataResponseModelBody &&
-     other.item == item;
+     other.items == items;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (item == null ? 0 : item!.hashCode);
+    (items.hashCode);
 
   @override
-  String toString() => 'YtdStockdataResponseModelBody[item=$item]';
+  String toString() => 'YtdStockdataResponseModelBody[items=$items]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (item != null) {
-      json[r'item'] = item;
-    }
+      json[r'items'] = items;
     return json;
   }
 
@@ -63,7 +55,7 @@ class YtdStockdataResponseModelBody {
       }());
 
       return YtdStockdataResponseModelBody(
-        item: ListSymbolsBodyData.fromJson(json[r'item']),
+        items: ListSymbolsBodyData.listFromJson(json[r'items']) ?? const [],
       );
     }
     return null;

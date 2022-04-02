@@ -16,8 +16,8 @@ void main() {
   // final instance = YtdStockdataResponseModelBody();
 
   group('test YtdStockdataResponseModelBody', () {
-    // ListSymbolsBodyData item
-    test('to test the property `item`', () async {
+    // List<ListSymbolsBodyData> items (default value: const [])
+    test('to test the property `items`', () async {
       // TODO
     });
 
