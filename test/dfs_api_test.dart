@@ -22,6 +22,11 @@ void main() {
       // TODO
     });
 
+    //Future<GetStockdataLatestResponseModel> getStockdataLatest(String symbol, String apiKey) async
+    test('test getStockdataLatest', () async {
+      // TODO
+    });
+
     //Future<ListSymbols> listSymbols(String apiKey) async
     test('test listSymbols', () async {
       // TODO
@@ -84,6 +89,11 @@ void main() {
 
     //Future v1StockdataSymbol2yearsOptions(String symbol) async
     test('test v1StockdataSymbol2yearsOptions', () async {
+      // TODO
+    });
+
+    //Future v1StockdataSymbolLatestOptions(String symbol) async
+    test('test v1StockdataSymbolLatestOptions', () async {
       // TODO
     });
 

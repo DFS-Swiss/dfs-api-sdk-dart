@@ -215,6 +215,10 @@ class ApiClient {
           return GetStockdataInfoResponseModelBody.fromJson(value);
         case 'GetStockdataInfoResponseModelBodyItem':
           return GetStockdataInfoResponseModelBodyItem.fromJson(value);
+        case 'GetStockdataLatestResponseModel':
+          return GetStockdataLatestResponseModel.fromJson(value);
+        case 'GetStockdataLatestResponseModelBody':
+          return GetStockdataLatestResponseModelBody.fromJson(value);
         case 'GetUserResponseModel':
           return GetUserResponseModel.fromJson(value);
         case 'GetUserResponseModelBody':

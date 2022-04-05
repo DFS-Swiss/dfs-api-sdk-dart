@@ -32,6 +32,8 @@ part 'api/dfs_api.dart';
 part 'model/get_stockdata_info_response_model.dart';
 part 'model/get_stockdata_info_response_model_body.dart';
 part 'model/get_stockdata_info_response_model_body_item.dart';
+part 'model/get_stockdata_latest_response_model.dart';
+part 'model/get_stockdata_latest_response_model_body.dart';
 part 'model/get_user_response_model.dart';
 part 'model/get_user_response_model_body.dart';
 part 'model/get_user_response_model_body_item.dart';

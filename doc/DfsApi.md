@@ -10,6 +10,7 @@ All URIs are relative to *https://ryfjnva5k5.execute-api.eu-central-1.amazonaws.
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getStockdataInfo**](DfsApi.md#getstockdatainfo) | **GET** /v1/stockdata/{symbol} | 
+[**getStockdataLatest**](DfsApi.md#getstockdatalatest) | **GET** /v1/stockdata/{symbol}/latest | 
 [**listSymbols**](DfsApi.md#listsymbols) | **GET** /v1/stockdata/list | 
 [**mtdStockdata**](DfsApi.md#mtdstockdata) | **GET** /v1/stockdata/{symbol}/mtd | 
 [**oneYearStockdata**](DfsApi.md#oneyearstockdata) | **GET** /v1/stockdata/{symbol}/1year | 
@@ -23,6 +24,7 @@ Method | HTTP request | Description
 [**v1StockdataSymbol1yearOptions**](DfsApi.md#v1stockdatasymbol1yearoptions) | **OPTIONS** /v1/stockdata/{symbol}/1year | 
 [**v1StockdataSymbol24hOptions**](DfsApi.md#v1stockdatasymbol24hoptions) | **OPTIONS** /v1/stockdata/{symbol}/24h | 
 [**v1StockdataSymbol2yearsOptions**](DfsApi.md#v1stockdatasymbol2yearsoptions) | **OPTIONS** /v1/stockdata/{symbol}/2years | 
+[**v1StockdataSymbolLatestOptions**](DfsApi.md#v1stockdatasymbollatestoptions) | **OPTIONS** /v1/stockdata/{symbol}/latest | 
 [**v1StockdataSymbolMtdOptions**](DfsApi.md#v1stockdatasymbolmtdoptions) | **OPTIONS** /v1/stockdata/{symbol}/mtd | 
 [**v1StockdataSymbolOptions**](DfsApi.md#v1stockdatasymboloptions) | **OPTIONS** /v1/stockdata/{symbol} | 
 [**v1StockdataSymbolYtdOptions**](DfsApi.md#v1stockdatasymbolytdoptions) | **OPTIONS** /v1/stockdata/{symbol}/ytd | 
@@ -65,6 +67,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetStockdataInfoResponseModel**](GetStockdataInfoResponseModel.md)
+
+### Authorization
+
+[proddfsswisscognitoAuthorizer029DC9BB](../README.md#proddfsswisscognitoAuthorizer029DC9BB)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getStockdataLatest**
+> GetStockdataLatestResponseModel getStockdataLatest(symbol, apiKey)
+
+
+
+### Example
+```dart
+import 'package:dfs_sdk/api.dart';
+// TODO Configure API key authorization: proddfsswisscognitoAuthorizer029DC9BB
+//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKeyPrefix = 'Bearer';
+
+final api_instance = DfsApi();
+final symbol = symbol_example; // String | 
+final apiKey = apiKey_example; // String | 
+
+try {
+    final result = api_instance.getStockdataLatest(symbol, apiKey);
+    print(result);
+} catch (e) {
+    print('Exception when calling DfsApi->getStockdataLatest: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **String**|  | 
+ **apiKey** | **String**|  | 
+
+### Return type
+
+[**GetStockdataLatestResponseModel**](GetStockdataLatestResponseModel.md)
 
 ### Authorization
 
@@ -575,6 +624,46 @@ try {
     api_instance.v1StockdataSymbol2yearsOptions(symbol);
 } catch (e) {
     print('Exception when calling DfsApi->v1StockdataSymbol2yearsOptions: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **String**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v1StockdataSymbolLatestOptions**
+> v1StockdataSymbolLatestOptions(symbol)
+
+
+
+### Example
+```dart
+import 'package:dfs_sdk/api.dart';
+
+final api_instance = DfsApi();
+final symbol = symbol_example; // String | 
+
+try {
+    api_instance.v1StockdataSymbolLatestOptions(symbol);
+} catch (e) {
+    print('Exception when calling DfsApi->v1StockdataSymbolLatestOptions: $e\n');
 }
 ```
 
