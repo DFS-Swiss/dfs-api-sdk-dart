@@ -11,18 +11,18 @@
 import 'package:dfs_sdk/api.dart';
 import 'package:test/test.dart';
 
-// tests for ListSymbolsBodyItems
+// tests for SellAssetRequestModel
 void main() {
-  // final instance = ListSymbolsBodyItems();
+  // final instance = SellAssetRequestModel();
 
-  group('test ListSymbolsBodyItems', () {
-    // GetStockdataInfoResponseModelBodyItem symbol
+  group('test SellAssetRequestModel', () {
+    // String symbol
     test('to test the property `symbol`', () async {
       // TODO
     });
 
-    // List<Model1yearStockdataResponseModelBodyItems> data (default value: const [])
-    test('to test the property `data`', () async {
+    // num ammountOfTokensToSell
+    test('to test the property `ammountOfTokensToSell`', () async {
       // TODO
     });
 

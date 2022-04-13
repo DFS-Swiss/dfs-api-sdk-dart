@@ -11,13 +11,13 @@
 import 'package:dfs_sdk/api.dart';
 import 'package:test/test.dart';
 
-// tests for GetStockdataLatestResponseModelBody
+// tests for Model1yearStockdataResponseModelBody
 void main() {
-  // final instance = GetStockdataLatestResponseModelBody();
+  // final instance = Model1yearStockdataResponseModelBody();
 
-  group('test GetStockdataLatestResponseModelBody', () {
-    // Model1yearStockdataResponseModelBodyItems item
-    test('to test the property `item`', () async {
+  group('test Model1yearStockdataResponseModelBody', () {
+    // List<Model1yearStockdataResponseModelBodyItems> items (default value: const [])
+    test('to test the property `items`', () async {
       // TODO
     });
 

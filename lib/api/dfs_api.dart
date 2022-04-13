@@ -16,6 +16,61 @@ class DfsApi {
 
   final ApiClient apiClient;
 
+  /// Performs an HTTP 'POST /v1/assets/buy' operation and returns the [Response].
+  /// Parameters:
+  ///
+  /// * [String] apiKey (required):
+  ///
+  /// * [BuyAssetRequestModel] buyAssetRequestModel (required):
+  Future<Response> buyAssetWithHttpInfo(String apiKey, BuyAssetRequestModel buyAssetRequestModel,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/v1/assets/buy';
+
+    // ignore: prefer_final_locals
+    Object? postBody = buyAssetRequestModel;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    headerParams[r'apiKey'] = parameterToString(apiKey);
+
+    const authNames = <String>['proddfsswisscognitoAuthorizer029DC9BB'];
+    const contentTypes = <String>['application/json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+      authNames,
+    );
+  }
+
+  /// Parameters:
+  ///
+  /// * [String] apiKey (required):
+  ///
+  /// * [BuyAssetRequestModel] buyAssetRequestModel (required):
+  Future<BuyAssetResponseModel?> buyAsset(String apiKey, BuyAssetRequestModel buyAssetRequestModel,) async {
+    final response = await buyAssetWithHttpInfo(apiKey, buyAssetRequestModel,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'BuyAssetResponseModel',) as BuyAssetResponseModel;
+    
+    }
+    return null;
+  }
+
   /// Performs an HTTP 'GET /v1/stockdata/{symbol}' operation and returns the [Response].
   /// Parameters:
   ///
@@ -326,6 +381,61 @@ class DfsApi {
     }
   }
 
+  /// Performs an HTTP 'POST /v1/assets/sell' operation and returns the [Response].
+  /// Parameters:
+  ///
+  /// * [String] apiKey (required):
+  ///
+  /// * [SellAssetRequestModel] sellAssetRequestModel (required):
+  Future<Response> sellAssetWithHttpInfo(String apiKey, SellAssetRequestModel sellAssetRequestModel,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/v1/assets/sell';
+
+    // ignore: prefer_final_locals
+    Object? postBody = sellAssetRequestModel;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    headerParams[r'apiKey'] = parameterToString(apiKey);
+
+    const authNames = <String>['proddfsswisscognitoAuthorizer029DC9BB'];
+    const contentTypes = <String>['application/json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+      authNames,
+    );
+  }
+
+  /// Parameters:
+  ///
+  /// * [String] apiKey (required):
+  ///
+  /// * [SellAssetRequestModel] sellAssetRequestModel (required):
+  Future<SellAssetResponseModel?> sellAsset(String apiKey, SellAssetRequestModel sellAssetRequestModel,) async {
+    final response = await sellAssetWithHttpInfo(apiKey, sellAssetRequestModel,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SellAssetResponseModel',) as SellAssetResponseModel;
+    
+    }
+    return null;
+  }
+
   /// Performs an HTTP 'GET /v1/stockdata/{symbol}/24h' operation and returns the [Response].
   /// Parameters:
   ///
@@ -487,6 +597,111 @@ class DfsApi {
     
     }
     return null;
+  }
+
+  /// Performs an HTTP 'OPTIONS /v1/assets/buy' operation and returns the [Response].
+  Future<Response> v1AssetsBuyOptionsWithHttpInfo() async {
+    // ignore: prefer_const_declarations
+    final path = r'/v1/assets/buy';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const authNames = <String>[];
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'OPTIONS',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+      authNames,
+    );
+  }
+
+  Future<void> v1AssetsBuyOptions() async {
+    final response = await v1AssetsBuyOptionsWithHttpInfo();
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+  }
+
+  /// Performs an HTTP 'OPTIONS /v1/assets' operation and returns the [Response].
+  Future<Response> v1AssetsOptionsWithHttpInfo() async {
+    // ignore: prefer_const_declarations
+    final path = r'/v1/assets';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const authNames = <String>[];
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'OPTIONS',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+      authNames,
+    );
+  }
+
+  Future<void> v1AssetsOptions() async {
+    final response = await v1AssetsOptionsWithHttpInfo();
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+  }
+
+  /// Performs an HTTP 'OPTIONS /v1/assets/sell' operation and returns the [Response].
+  Future<Response> v1AssetsSellOptionsWithHttpInfo() async {
+    // ignore: prefer_const_declarations
+    final path = r'/v1/assets/sell';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const authNames = <String>[];
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'OPTIONS',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+      authNames,
+    );
+  }
+
+  Future<void> v1AssetsSellOptions() async {
+    final response = await v1AssetsSellOptionsWithHttpInfo();
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
   }
 
   /// Performs an HTTP 'OPTIONS /v1' operation and returns the [Response].

@@ -17,6 +17,11 @@ void main() {
   // final instance = DfsApi();
 
   group('tests for DfsApi', () {
+    //Future<BuyAssetResponseModel> buyAsset(String apiKey, BuyAssetRequestModel buyAssetRequestModel) async
+    test('test buyAsset', () async {
+      // TODO
+    });
+
     //Future<GetStockdataInfoResponseModel> getStockdataInfo(String symbol, String apiKey) async
     test('test getStockdataInfo', () async {
       // TODO
@@ -47,6 +52,11 @@ void main() {
       // TODO
     });
 
+    //Future<SellAssetResponseModel> sellAsset(String apiKey, SellAssetRequestModel sellAssetRequestModel) async
+    test('test sellAsset', () async {
+      // TODO
+    });
+
     //Future<Model24hStockdataResponseModel> twentyfourHourStockdata(String apiKey, String symbol) async
     test('test twentyfourHourStockdata', () async {
       // TODO
@@ -59,6 +69,21 @@ void main() {
 
     //Future<GetUserResponseModel> userGet(String apiKey) async
     test('test userGet', () async {
+      // TODO
+    });
+
+    //Future v1AssetsBuyOptions() async
+    test('test v1AssetsBuyOptions', () async {
+      // TODO
+    });
+
+    //Future v1AssetsOptions() async
+    test('test v1AssetsOptions', () async {
+      // TODO
+    });
+
+    //Future v1AssetsSellOptions() async
+    test('test v1AssetsSellOptions', () async {
       // TODO
     });
 

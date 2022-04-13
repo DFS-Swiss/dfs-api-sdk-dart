@@ -9,15 +9,20 @@ All URIs are relative to *https://ryfjnva5k5.execute-api.eu-central-1.amazonaws.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**buyAsset**](DfsApi.md#buyasset) | **POST** /v1/assets/buy | 
 [**getStockdataInfo**](DfsApi.md#getstockdatainfo) | **GET** /v1/stockdata/{symbol} | 
 [**getStockdataLatest**](DfsApi.md#getstockdatalatest) | **GET** /v1/stockdata/{symbol}/latest | 
 [**listSymbols**](DfsApi.md#listsymbols) | **GET** /v1/stockdata/list | 
 [**mtdStockdata**](DfsApi.md#mtdstockdata) | **GET** /v1/stockdata/{symbol}/mtd | 
 [**oneYearStockdata**](DfsApi.md#oneyearstockdata) | **GET** /v1/stockdata/{symbol}/1year | 
 [**rootOptions**](DfsApi.md#rootoptions) | **OPTIONS** / | 
+[**sellAsset**](DfsApi.md#sellasset) | **POST** /v1/assets/sell | 
 [**twentyfourHourStockdata**](DfsApi.md#twentyfourhourstockdata) | **GET** /v1/stockdata/{symbol}/24h | 
 [**twoYearsStockdata**](DfsApi.md#twoyearsstockdata) | **GET** /v1/stockdata/{symbol}/2years | 
 [**userGet**](DfsApi.md#userget) | **GET** /v1/user | 
+[**v1AssetsBuyOptions**](DfsApi.md#v1assetsbuyoptions) | **OPTIONS** /v1/assets/buy | 
+[**v1AssetsOptions**](DfsApi.md#v1assetsoptions) | **OPTIONS** /v1/assets | 
+[**v1AssetsSellOptions**](DfsApi.md#v1assetsselloptions) | **OPTIONS** /v1/assets/sell | 
 [**v1Options**](DfsApi.md#v1options) | **OPTIONS** /v1 | 
 [**v1StockdataListOptions**](DfsApi.md#v1stockdatalistoptions) | **OPTIONS** /v1/stockdata/list | 
 [**v1StockdataOptions**](DfsApi.md#v1stockdataoptions) | **OPTIONS** /v1/stockdata | 
@@ -31,6 +36,53 @@ Method | HTTP request | Description
 [**v1UserOptions**](DfsApi.md#v1useroptions) | **OPTIONS** /v1/user | 
 [**ytdStockdata**](DfsApi.md#ytdstockdata) | **GET** /v1/stockdata/{symbol}/ytd | 
 
+
+# **buyAsset**
+> BuyAssetResponseModel buyAsset(apiKey, buyAssetRequestModel)
+
+
+
+### Example
+```dart
+import 'package:dfs_sdk/api.dart';
+// TODO Configure API key authorization: proddfsswisscognitoAuthorizer029DC9BB
+//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKeyPrefix = 'Bearer';
+
+final api_instance = DfsApi();
+final apiKey = apiKey_example; // String | 
+final buyAssetRequestModel = BuyAssetRequestModel(); // BuyAssetRequestModel | 
+
+try {
+    final result = api_instance.buyAsset(apiKey, buyAssetRequestModel);
+    print(result);
+} catch (e) {
+    print('Exception when calling DfsApi->buyAsset: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **apiKey** | **String**|  | 
+ **buyAssetRequestModel** | [**BuyAssetRequestModel**](BuyAssetRequestModel.md)|  | 
+
+### Return type
+
+[**BuyAssetResponseModel**](BuyAssetResponseModel.md)
+
+### Authorization
+
+[proddfsswisscognitoAuthorizer029DC9BB](../README.md#proddfsswisscognitoAuthorizer029DC9BB)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getStockdataInfo**
 > GetStockdataInfoResponseModel getStockdataInfo(symbol, apiKey)
@@ -289,6 +341,53 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **sellAsset**
+> SellAssetResponseModel sellAsset(apiKey, sellAssetRequestModel)
+
+
+
+### Example
+```dart
+import 'package:dfs_sdk/api.dart';
+// TODO Configure API key authorization: proddfsswisscognitoAuthorizer029DC9BB
+//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKeyPrefix = 'Bearer';
+
+final api_instance = DfsApi();
+final apiKey = apiKey_example; // String | 
+final sellAssetRequestModel = SellAssetRequestModel(); // SellAssetRequestModel | 
+
+try {
+    final result = api_instance.sellAsset(apiKey, sellAssetRequestModel);
+    print(result);
+} catch (e) {
+    print('Exception when calling DfsApi->sellAsset: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **apiKey** | **String**|  | 
+ **sellAssetRequestModel** | [**SellAssetRequestModel**](SellAssetRequestModel.md)|  | 
+
+### Return type
+
+[**SellAssetResponseModel**](SellAssetResponseModel.md)
+
+### Authorization
+
+[proddfsswisscognitoAuthorizer029DC9BB](../README.md#proddfsswisscognitoAuthorizer029DC9BB)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **twentyfourHourStockdata**
 > Model24hStockdataResponseModel twentyfourHourStockdata(apiKey, symbol)
 
@@ -417,6 +516,114 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v1AssetsBuyOptions**
+> v1AssetsBuyOptions()
+
+
+
+### Example
+```dart
+import 'package:dfs_sdk/api.dart';
+
+final api_instance = DfsApi();
+
+try {
+    api_instance.v1AssetsBuyOptions();
+} catch (e) {
+    print('Exception when calling DfsApi->v1AssetsBuyOptions: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v1AssetsOptions**
+> v1AssetsOptions()
+
+
+
+### Example
+```dart
+import 'package:dfs_sdk/api.dart';
+
+final api_instance = DfsApi();
+
+try {
+    api_instance.v1AssetsOptions();
+} catch (e) {
+    print('Exception when calling DfsApi->v1AssetsOptions: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v1AssetsSellOptions**
+> v1AssetsSellOptions()
+
+
+
+### Example
+```dart
+import 'package:dfs_sdk/api.dart';
+
+final api_instance = DfsApi();
+
+try {
+    api_instance.v1AssetsSellOptions();
+} catch (e) {
+    print('Exception when calling DfsApi->v1AssetsSellOptions: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

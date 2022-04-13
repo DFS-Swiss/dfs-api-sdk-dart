@@ -209,6 +209,10 @@ class ApiClient {
           }
           final valueString = '$value'.toLowerCase();
           return valueString == 'true' || valueString == '1';
+        case 'BuyAssetRequestModel':
+          return BuyAssetRequestModel.fromJson(value);
+        case 'BuyAssetResponseModel':
+          return BuyAssetResponseModel.fromJson(value);
         case 'GetStockdataInfoResponseModel':
           return GetStockdataInfoResponseModel.fromJson(value);
         case 'GetStockdataInfoResponseModelBody':
@@ -229,22 +233,26 @@ class ApiClient {
           return ListSymbols.fromJson(value);
         case 'ListSymbolsBody':
           return ListSymbolsBody.fromJson(value);
-        case 'ListSymbolsBodyData':
-          return ListSymbolsBodyData.fromJson(value);
         case 'ListSymbolsBodyItems':
           return ListSymbolsBodyItems.fromJson(value);
         case 'Model1yearStockdataResponseModel':
           return Model1yearStockdataResponseModel.fromJson(value);
+        case 'Model1yearStockdataResponseModelBody':
+          return Model1yearStockdataResponseModelBody.fromJson(value);
+        case 'Model1yearStockdataResponseModelBodyItems':
+          return Model1yearStockdataResponseModelBodyItems.fromJson(value);
         case 'Model24hStockdataResponseModel':
           return Model24hStockdataResponseModel.fromJson(value);
         case 'Model2yearsStockdataResponseModel':
           return Model2yearsStockdataResponseModel.fromJson(value);
         case 'MtdStockdataResponseModel':
           return MtdStockdataResponseModel.fromJson(value);
+        case 'SellAssetRequestModel':
+          return SellAssetRequestModel.fromJson(value);
+        case 'SellAssetResponseModel':
+          return SellAssetResponseModel.fromJson(value);
         case 'YtdStockdataResponseModel':
           return YtdStockdataResponseModel.fromJson(value);
-        case 'YtdStockdataResponseModelBody':
-          return YtdStockdataResponseModelBody.fromJson(value);
         default:
           dynamic match;
           if (value is List && (match = _regList.firstMatch(targetType)?.group(1)) != null) {

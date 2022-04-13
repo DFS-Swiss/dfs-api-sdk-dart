@@ -10,15 +10,15 @@
 
 part of openapi.api;
 
-class MtdStockdataResponseModel {
-  /// Returns a new [MtdStockdataResponseModel] instance.
-  MtdStockdataResponseModel({
-    required this.message,
-    this.body,
-    this.statusCode,
+class BuyAssetRequestModel {
+  /// Returns a new [BuyAssetRequestModel] instance.
+  BuyAssetRequestModel({
+    required this.symbol,
+    this.amountToSpend,
+    this.tokenToBuy,
   });
 
-  String message;
+  String symbol;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -26,7 +26,7 @@ class MtdStockdataResponseModel {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  Model1yearStockdataResponseModelBody? body;
+  num? amountToSpend;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -34,40 +34,40 @@ class MtdStockdataResponseModel {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  num? statusCode;
+  num? tokenToBuy;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is MtdStockdataResponseModel &&
-     other.message == message &&
-     other.body == body &&
-     other.statusCode == statusCode;
+  bool operator ==(Object other) => identical(this, other) || other is BuyAssetRequestModel &&
+     other.symbol == symbol &&
+     other.amountToSpend == amountToSpend &&
+     other.tokenToBuy == tokenToBuy;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (message.hashCode) +
-    (body == null ? 0 : body!.hashCode) +
-    (statusCode == null ? 0 : statusCode!.hashCode);
+    (symbol.hashCode) +
+    (amountToSpend == null ? 0 : amountToSpend!.hashCode) +
+    (tokenToBuy == null ? 0 : tokenToBuy!.hashCode);
 
   @override
-  String toString() => 'MtdStockdataResponseModel[message=$message, body=$body, statusCode=$statusCode]';
+  String toString() => 'BuyAssetRequestModel[symbol=$symbol, amountToSpend=$amountToSpend, tokenToBuy=$tokenToBuy]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-      json[r'message'] = message;
-    if (body != null) {
-      json[r'body'] = body;
+      json[r'symbol'] = symbol;
+    if (amountToSpend != null) {
+      json[r'amountToSpend'] = amountToSpend;
     }
-    if (statusCode != null) {
-      json[r'statusCode'] = statusCode;
+    if (tokenToBuy != null) {
+      json[r'tokenToBuy'] = tokenToBuy;
     }
     return json;
   }
 
-  /// Returns a new [MtdStockdataResponseModel] instance and imports its values from
+  /// Returns a new [BuyAssetRequestModel] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static MtdStockdataResponseModel? fromJson(dynamic value) {
+  static BuyAssetRequestModel? fromJson(dynamic value) {
     if (value is Map) {
       final json = value.cast<String, dynamic>();
 
@@ -76,28 +76,30 @@ class MtdStockdataResponseModel {
       // Note 2: this code is stripped in release mode!
       assert(() {
         requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "MtdStockdataResponseModel[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "MtdStockdataResponseModel[$key]" has a null value in JSON.');
+          assert(json.containsKey(key), 'Required key "BuyAssetRequestModel[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "BuyAssetRequestModel[$key]" has a null value in JSON.');
         });
         return true;
       }());
 
-      return MtdStockdataResponseModel(
-        message: mapValueOfType<String>(json, r'message')!,
-        body: Model1yearStockdataResponseModelBody.fromJson(json[r'body']),
-        statusCode: json[r'statusCode'] == null
+      return BuyAssetRequestModel(
+        symbol: mapValueOfType<String>(json, r'symbol')!,
+        amountToSpend: json[r'amountToSpend'] == null
             ? null
-            : num.parse(json[r'statusCode'].toString()),
+            : num.parse(json[r'amountToSpend'].toString()),
+        tokenToBuy: json[r'tokenToBuy'] == null
+            ? null
+            : num.parse(json[r'tokenToBuy'].toString()),
       );
     }
     return null;
   }
 
-  static List<MtdStockdataResponseModel>? listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <MtdStockdataResponseModel>[];
+  static List<BuyAssetRequestModel>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <BuyAssetRequestModel>[];
     if (json is List && json.isNotEmpty) {
       for (final row in json) {
-        final value = MtdStockdataResponseModel.fromJson(row);
+        final value = BuyAssetRequestModel.fromJson(row);
         if (value != null) {
           result.add(value);
         }
@@ -106,12 +108,12 @@ class MtdStockdataResponseModel {
     return result.toList(growable: growable);
   }
 
-  static Map<String, MtdStockdataResponseModel> mapFromJson(dynamic json) {
-    final map = <String, MtdStockdataResponseModel>{};
+  static Map<String, BuyAssetRequestModel> mapFromJson(dynamic json) {
+    final map = <String, BuyAssetRequestModel>{};
     if (json is Map && json.isNotEmpty) {
       json = json.cast<String, dynamic>(); // ignore: parameter_assignments
       for (final entry in json.entries) {
-        final value = MtdStockdataResponseModel.fromJson(entry.value);
+        final value = BuyAssetRequestModel.fromJson(entry.value);
         if (value != null) {
           map[entry.key] = value;
         }
@@ -120,13 +122,13 @@ class MtdStockdataResponseModel {
     return map;
   }
 
-  // maps a json object with a list of MtdStockdataResponseModel-objects as value to a dart map
-  static Map<String, List<MtdStockdataResponseModel>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<MtdStockdataResponseModel>>{};
+  // maps a json object with a list of BuyAssetRequestModel-objects as value to a dart map
+  static Map<String, List<BuyAssetRequestModel>> mapListFromJson(dynamic json, {bool growable = false,}) {
+    final map = <String, List<BuyAssetRequestModel>>{};
     if (json is Map && json.isNotEmpty) {
       json = json.cast<String, dynamic>(); // ignore: parameter_assignments
       for (final entry in json.entries) {
-        final value = MtdStockdataResponseModel.listFromJson(entry.value, growable: growable,);
+        final value = BuyAssetRequestModel.listFromJson(entry.value, growable: growable,);
         if (value != null) {
           map[entry.key] = value;
         }
@@ -137,7 +139,7 @@ class MtdStockdataResponseModel {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
-    'message',
+    'symbol',
   };
 }
 

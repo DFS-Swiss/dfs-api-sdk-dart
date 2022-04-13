@@ -11,18 +11,13 @@
 import 'package:dfs_sdk/api.dart';
 import 'package:test/test.dart';
 
-// tests for Model1yearStockdataResponseModel
+// tests for SellAssetResponseModel
 void main() {
-  // final instance = Model1yearStockdataResponseModel();
+  // final instance = SellAssetResponseModel();
 
-  group('test Model1yearStockdataResponseModel', () {
+  group('test SellAssetResponseModel', () {
     // String message
     test('to test the property `message`', () async {
-      // TODO
-    });
-
-    // Model1yearStockdataResponseModelBody body
-    test('to test the property `body`', () async {
       // TODO
     });
 

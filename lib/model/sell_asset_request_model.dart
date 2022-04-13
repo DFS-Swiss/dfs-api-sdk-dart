@@ -10,42 +10,42 @@
 
 part of openapi.api;
 
-class ListSymbolsBodyItems {
-  /// Returns a new [ListSymbolsBodyItems] instance.
-  ListSymbolsBodyItems({
+class SellAssetRequestModel {
+  /// Returns a new [SellAssetRequestModel] instance.
+  SellAssetRequestModel({
     required this.symbol,
-    this.data = const [],
+    required this.ammountOfTokensToSell,
   });
 
-  GetStockdataInfoResponseModelBodyItem symbol;
+  String symbol;
 
-  List<Model1yearStockdataResponseModelBodyItems> data;
+  num ammountOfTokensToSell;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ListSymbolsBodyItems &&
+  bool operator ==(Object other) => identical(this, other) || other is SellAssetRequestModel &&
      other.symbol == symbol &&
-     other.data == data;
+     other.ammountOfTokensToSell == ammountOfTokensToSell;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (symbol.hashCode) +
-    (data.hashCode);
+    (ammountOfTokensToSell.hashCode);
 
   @override
-  String toString() => 'ListSymbolsBodyItems[symbol=$symbol, data=$data]';
+  String toString() => 'SellAssetRequestModel[symbol=$symbol, ammountOfTokensToSell=$ammountOfTokensToSell]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
       json[r'symbol'] = symbol;
-      json[r'data'] = data;
+      json[r'ammountOfTokensToSell'] = ammountOfTokensToSell;
     return json;
   }
 
-  /// Returns a new [ListSymbolsBodyItems] instance and imports its values from
+  /// Returns a new [SellAssetRequestModel] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static ListSymbolsBodyItems? fromJson(dynamic value) {
+  static SellAssetRequestModel? fromJson(dynamic value) {
     if (value is Map) {
       final json = value.cast<String, dynamic>();
 
@@ -54,25 +54,27 @@ class ListSymbolsBodyItems {
       // Note 2: this code is stripped in release mode!
       assert(() {
         requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ListSymbolsBodyItems[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ListSymbolsBodyItems[$key]" has a null value in JSON.');
+          assert(json.containsKey(key), 'Required key "SellAssetRequestModel[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "SellAssetRequestModel[$key]" has a null value in JSON.');
         });
         return true;
       }());
 
-      return ListSymbolsBodyItems(
-        symbol: GetStockdataInfoResponseModelBodyItem.fromJson(json[r'symbol'])!,
-        data: Model1yearStockdataResponseModelBodyItems.listFromJson(json[r'data'])!,
+      return SellAssetRequestModel(
+        symbol: mapValueOfType<String>(json, r'symbol')!,
+        ammountOfTokensToSell: json[r'ammountOfTokensToSell'] == null
+            ? null
+            : num.parse(json[r'ammountOfTokensToSell'].toString()),
       );
     }
     return null;
   }
 
-  static List<ListSymbolsBodyItems>? listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <ListSymbolsBodyItems>[];
+  static List<SellAssetRequestModel>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <SellAssetRequestModel>[];
     if (json is List && json.isNotEmpty) {
       for (final row in json) {
-        final value = ListSymbolsBodyItems.fromJson(row);
+        final value = SellAssetRequestModel.fromJson(row);
         if (value != null) {
           result.add(value);
         }
@@ -81,12 +83,12 @@ class ListSymbolsBodyItems {
     return result.toList(growable: growable);
   }
 
-  static Map<String, ListSymbolsBodyItems> mapFromJson(dynamic json) {
-    final map = <String, ListSymbolsBodyItems>{};
+  static Map<String, SellAssetRequestModel> mapFromJson(dynamic json) {
+    final map = <String, SellAssetRequestModel>{};
     if (json is Map && json.isNotEmpty) {
       json = json.cast<String, dynamic>(); // ignore: parameter_assignments
       for (final entry in json.entries) {
-        final value = ListSymbolsBodyItems.fromJson(entry.value);
+        final value = SellAssetRequestModel.fromJson(entry.value);
         if (value != null) {
           map[entry.key] = value;
         }
@@ -95,13 +97,13 @@ class ListSymbolsBodyItems {
     return map;
   }
 
-  // maps a json object with a list of ListSymbolsBodyItems-objects as value to a dart map
-  static Map<String, List<ListSymbolsBodyItems>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<ListSymbolsBodyItems>>{};
+  // maps a json object with a list of SellAssetRequestModel-objects as value to a dart map
+  static Map<String, List<SellAssetRequestModel>> mapListFromJson(dynamic json, {bool growable = false,}) {
+    final map = <String, List<SellAssetRequestModel>>{};
     if (json is Map && json.isNotEmpty) {
       json = json.cast<String, dynamic>(); // ignore: parameter_assignments
       for (final entry in json.entries) {
-        final value = ListSymbolsBodyItems.listFromJson(entry.value, growable: growable,);
+        final value = SellAssetRequestModel.listFromJson(entry.value, growable: growable,);
         if (value != null) {
           map[entry.key] = value;
         }
@@ -113,7 +115,7 @@ class ListSymbolsBodyItems {
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
     'symbol',
-    'data',
+    'ammountOfTokensToSell',
   };
 }
 
