@@ -71,6 +71,108 @@ class DfsApi {
     return null;
   }
 
+  /// Performs an HTTP 'GET /v1/user/assets' operation and returns the [Response].
+  /// Parameters:
+  ///
+  /// * [String] apiKey (required):
+  Future<Response> getAvaliableAssetsWithHttpInfo(String apiKey,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/v1/user/assets';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    headerParams[r'apiKey'] = parameterToString(apiKey);
+
+    const authNames = <String>['proddfsswisscognitoAuthorizer029DC9BB'];
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+      authNames,
+    );
+  }
+
+  /// Parameters:
+  ///
+  /// * [String] apiKey (required):
+  Future<GetAvaliableAssetsResponseModel?> getAvaliableAssets(String apiKey,) async {
+    final response = await getAvaliableAssetsWithHttpInfo(apiKey,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'GetAvaliableAssetsResponseModel',) as GetAvaliableAssetsResponseModel;
+    
+    }
+    return null;
+  }
+
+  /// Performs an HTTP 'GET /v1/user/balance' operation and returns the [Response].
+  /// Parameters:
+  ///
+  /// * [String] apiKey (required):
+  Future<Response> getAvaliableBalanceWithHttpInfo(String apiKey,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/v1/user/balance';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    headerParams[r'apiKey'] = parameterToString(apiKey);
+
+    const authNames = <String>['proddfsswisscognitoAuthorizer029DC9BB'];
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+      authNames,
+    );
+  }
+
+  /// Parameters:
+  ///
+  /// * [String] apiKey (required):
+  Future<GetAvaliableBalanceResponseModel?> getAvaliableBalance(String apiKey,) async {
+    final response = await getAvaliableBalanceWithHttpInfo(apiKey,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'GetAvaliableBalanceResponseModel',) as GetAvaliableBalanceResponseModel;
+    
+    }
+    return null;
+  }
+
   /// Performs an HTTP 'GET /v1/stockdata/{symbol}' operation and returns the [Response].
   /// Parameters:
   ///
@@ -1098,6 +1200,76 @@ class DfsApi {
   /// * [String] symbol (required):
   Future<void> v1StockdataSymbolYtdOptions(String symbol,) async {
     final response = await v1StockdataSymbolYtdOptionsWithHttpInfo(symbol,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+  }
+
+  /// Performs an HTTP 'OPTIONS /v1/user/assets' operation and returns the [Response].
+  Future<Response> v1UserAssetsOptionsWithHttpInfo() async {
+    // ignore: prefer_const_declarations
+    final path = r'/v1/user/assets';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const authNames = <String>[];
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'OPTIONS',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+      authNames,
+    );
+  }
+
+  Future<void> v1UserAssetsOptions() async {
+    final response = await v1UserAssetsOptionsWithHttpInfo();
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+  }
+
+  /// Performs an HTTP 'OPTIONS /v1/user/balance' operation and returns the [Response].
+  Future<Response> v1UserBalanceOptionsWithHttpInfo() async {
+    // ignore: prefer_const_declarations
+    final path = r'/v1/user/balance';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const authNames = <String>[];
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'OPTIONS',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+      authNames,
+    );
+  }
+
+  Future<void> v1UserBalanceOptions() async {
+    final response = await v1UserBalanceOptionsWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

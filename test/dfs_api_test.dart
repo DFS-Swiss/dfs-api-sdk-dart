@@ -22,6 +22,16 @@ void main() {
       // TODO
     });
 
+    //Future<GetAvaliableAssetsResponseModel> getAvaliableAssets(String apiKey) async
+    test('test getAvaliableAssets', () async {
+      // TODO
+    });
+
+    //Future<GetAvaliableBalanceResponseModel> getAvaliableBalance(String apiKey) async
+    test('test getAvaliableBalance', () async {
+      // TODO
+    });
+
     //Future<GetStockdataInfoResponseModel> getStockdataInfo(String symbol, String apiKey) async
     test('test getStockdataInfo', () async {
       // TODO
@@ -134,6 +144,16 @@ void main() {
 
     //Future v1StockdataSymbolYtdOptions(String symbol) async
     test('test v1StockdataSymbolYtdOptions', () async {
+      // TODO
+    });
+
+    //Future v1UserAssetsOptions() async
+    test('test v1UserAssetsOptions', () async {
+      // TODO
+    });
+
+    //Future v1UserBalanceOptions() async
+    test('test v1UserBalanceOptions', () async {
       // TODO
     });
 

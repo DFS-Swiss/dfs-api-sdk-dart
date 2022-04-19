@@ -213,6 +213,18 @@ class ApiClient {
           return BuyAssetRequestModel.fromJson(value);
         case 'BuyAssetResponseModel':
           return BuyAssetResponseModel.fromJson(value);
+        case 'GetAvaliableAssetsResponseModel':
+          return GetAvaliableAssetsResponseModel.fromJson(value);
+        case 'GetAvaliableAssetsResponseModelBody':
+          return GetAvaliableAssetsResponseModelBody.fromJson(value);
+        case 'GetAvaliableAssetsResponseModelBodyItems':
+          return GetAvaliableAssetsResponseModelBodyItems.fromJson(value);
+        case 'GetAvaliableBalanceResponseModel':
+          return GetAvaliableBalanceResponseModel.fromJson(value);
+        case 'GetAvaliableBalanceResponseModelBody':
+          return GetAvaliableBalanceResponseModelBody.fromJson(value);
+        case 'GetAvaliableBalanceResponseModelBodyItem':
+          return GetAvaliableBalanceResponseModelBodyItem.fromJson(value);
         case 'GetStockdataInfoResponseModel':
           return GetStockdataInfoResponseModel.fromJson(value);
         case 'GetStockdataInfoResponseModelBody':

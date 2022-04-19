@@ -31,6 +31,12 @@ part 'api/dfs_api.dart';
 
 part 'model/buy_asset_request_model.dart';
 part 'model/buy_asset_response_model.dart';
+part 'model/get_avaliable_assets_response_model.dart';
+part 'model/get_avaliable_assets_response_model_body.dart';
+part 'model/get_avaliable_assets_response_model_body_items.dart';
+part 'model/get_avaliable_balance_response_model.dart';
+part 'model/get_avaliable_balance_response_model_body.dart';
+part 'model/get_avaliable_balance_response_model_body_item.dart';
 part 'model/get_stockdata_info_response_model.dart';
 part 'model/get_stockdata_info_response_model_body.dart';
 part 'model/get_stockdata_info_response_model_body_item.dart';
