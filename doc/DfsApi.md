@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**buyAsset**](DfsApi.md#buyasset) | **POST** /v1/assets/buy | 
 [**getAvaliableAssets**](DfsApi.md#getavaliableassets) | **GET** /v1/user/assets | 
 [**getAvaliableBalance**](DfsApi.md#getavaliablebalance) | **GET** /v1/user/balance | 
+[**getBalanceHistory**](DfsApi.md#getbalancehistory) | **GET** /v1/user/balance/history | 
 [**getStockdataInfo**](DfsApi.md#getstockdatainfo) | **GET** /v1/stockdata/{symbol} | 
 [**getStockdataLatest**](DfsApi.md#getstockdatalatest) | **GET** /v1/stockdata/{symbol}/latest | 
 [**listSymbols**](DfsApi.md#listsymbols) | **GET** /v1/stockdata/list | 
@@ -36,6 +37,7 @@ Method | HTTP request | Description
 [**v1StockdataSymbolOptions**](DfsApi.md#v1stockdatasymboloptions) | **OPTIONS** /v1/stockdata/{symbol} | 
 [**v1StockdataSymbolYtdOptions**](DfsApi.md#v1stockdatasymbolytdoptions) | **OPTIONS** /v1/stockdata/{symbol}/ytd | 
 [**v1UserAssetsOptions**](DfsApi.md#v1userassetsoptions) | **OPTIONS** /v1/user/assets | 
+[**v1UserBalanceHistoryOptions**](DfsApi.md#v1userbalancehistoryoptions) | **OPTIONS** /v1/user/balance/history | 
 [**v1UserBalanceOptions**](DfsApi.md#v1userbalanceoptions) | **OPTIONS** /v1/user/balance | 
 [**v1UserOptions**](DfsApi.md#v1useroptions) | **OPTIONS** /v1/user | 
 [**ytdStockdata**](DfsApi.md#ytdstockdata) | **GET** /v1/stockdata/{symbol}/ytd | 
@@ -166,6 +168,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetAvaliableBalanceResponseModel**](GetAvaliableBalanceResponseModel.md)
+
+### Authorization
+
+[proddfsswisscognitoAuthorizer029DC9BB](../README.md#proddfsswisscognitoAuthorizer029DC9BB)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getBalanceHistory**
+> GetBalanceHistoryResponseModel getBalanceHistory(apiKey)
+
+
+
+### Example
+```dart
+import 'package:dfs_sdk/api.dart';
+// TODO Configure API key authorization: proddfsswisscognitoAuthorizer029DC9BB
+//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKeyPrefix = 'Bearer';
+
+final api_instance = DfsApi();
+final apiKey = apiKey_example; // String | 
+
+try {
+    final result = api_instance.getBalanceHistory(apiKey);
+    print(result);
+} catch (e) {
+    print('Exception when calling DfsApi->getBalanceHistory: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **apiKey** | **String**|  | 
+
+### Return type
+
+[**GetBalanceHistoryResponseModel**](GetBalanceHistoryResponseModel.md)
 
 ### Authorization
 
@@ -1124,6 +1171,42 @@ try {
     api_instance.v1UserAssetsOptions();
 } catch (e) {
     print('Exception when calling DfsApi->v1UserAssetsOptions: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v1UserBalanceHistoryOptions**
+> v1UserBalanceHistoryOptions()
+
+
+
+### Example
+```dart
+import 'package:dfs_sdk/api.dart';
+
+final api_instance = DfsApi();
+
+try {
+    api_instance.v1UserBalanceHistoryOptions();
+} catch (e) {
+    print('Exception when calling DfsApi->v1UserBalanceHistoryOptions: $e\n');
 }
 ```
 

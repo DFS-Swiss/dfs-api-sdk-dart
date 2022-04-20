@@ -12,6 +12,8 @@ doc/GetAvaliableAssetsResponseModelBodyItems.md
 doc/GetAvaliableBalanceResponseModel.md
 doc/GetAvaliableBalanceResponseModelBody.md
 doc/GetAvaliableBalanceResponseModelBodyItem.md
+doc/GetBalanceHistoryResponseModel.md
+doc/GetBalanceHistoryResponseModelBody.md
 doc/GetStockdataInfoResponseModel.md
 doc/GetStockdataInfoResponseModelBody.md
 doc/GetStockdataInfoResponseModelBodyItem.md
@@ -51,6 +53,8 @@ lib/model/get_avaliable_assets_response_model_body_items.dart
 lib/model/get_avaliable_balance_response_model.dart
 lib/model/get_avaliable_balance_response_model_body.dart
 lib/model/get_avaliable_balance_response_model_body_item.dart
+lib/model/get_balance_history_response_model.dart
+lib/model/get_balance_history_response_model_body.dart
 lib/model/get_stockdata_info_response_model.dart
 lib/model/get_stockdata_info_response_model_body.dart
 lib/model/get_stockdata_info_response_model_body_item.dart
@@ -81,6 +85,8 @@ test/get_avaliable_assets_response_model_test.dart
 test/get_avaliable_balance_response_model_body_item_test.dart
 test/get_avaliable_balance_response_model_body_test.dart
 test/get_avaliable_balance_response_model_test.dart
+test/get_balance_history_response_model_body_test.dart
+test/get_balance_history_response_model_test.dart
 test/get_stockdata_info_response_model_body_item_test.dart
 test/get_stockdata_info_response_model_body_test.dart
 test/get_stockdata_info_response_model_test.dart

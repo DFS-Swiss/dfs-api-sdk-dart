@@ -32,6 +32,11 @@ void main() {
       // TODO
     });
 
+    //Future<GetBalanceHistoryResponseModel> getBalanceHistory(String apiKey) async
+    test('test getBalanceHistory', () async {
+      // TODO
+    });
+
     //Future<GetStockdataInfoResponseModel> getStockdataInfo(String symbol, String apiKey) async
     test('test getStockdataInfo', () async {
       // TODO
@@ -149,6 +154,11 @@ void main() {
 
     //Future v1UserAssetsOptions() async
     test('test v1UserAssetsOptions', () async {
+      // TODO
+    });
+
+    //Future v1UserBalanceHistoryOptions() async
+    test('test v1UserBalanceHistoryOptions', () async {
       // TODO
     });
 

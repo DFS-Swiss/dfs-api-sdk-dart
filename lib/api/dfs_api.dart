@@ -173,6 +173,57 @@ class DfsApi {
     return null;
   }
 
+  /// Performs an HTTP 'GET /v1/user/balance/history' operation and returns the [Response].
+  /// Parameters:
+  ///
+  /// * [String] apiKey (required):
+  Future<Response> getBalanceHistoryWithHttpInfo(String apiKey,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/v1/user/balance/history';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    headerParams[r'apiKey'] = parameterToString(apiKey);
+
+    const authNames = <String>['proddfsswisscognitoAuthorizer029DC9BB'];
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+      authNames,
+    );
+  }
+
+  /// Parameters:
+  ///
+  /// * [String] apiKey (required):
+  Future<GetBalanceHistoryResponseModel?> getBalanceHistory(String apiKey,) async {
+    final response = await getBalanceHistoryWithHttpInfo(apiKey,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'GetBalanceHistoryResponseModel',) as GetBalanceHistoryResponseModel;
+    
+    }
+    return null;
+  }
+
   /// Performs an HTTP 'GET /v1/stockdata/{symbol}' operation and returns the [Response].
   /// Parameters:
   ///
@@ -1235,6 +1286,41 @@ class DfsApi {
 
   Future<void> v1UserAssetsOptions() async {
     final response = await v1UserAssetsOptionsWithHttpInfo();
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+  }
+
+  /// Performs an HTTP 'OPTIONS /v1/user/balance/history' operation and returns the [Response].
+  Future<Response> v1UserBalanceHistoryOptionsWithHttpInfo() async {
+    // ignore: prefer_const_declarations
+    final path = r'/v1/user/balance/history';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const authNames = <String>[];
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'OPTIONS',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+      authNames,
+    );
+  }
+
+  Future<void> v1UserBalanceHistoryOptions() async {
+    final response = await v1UserBalanceHistoryOptionsWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

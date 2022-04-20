@@ -225,6 +225,10 @@ class ApiClient {
           return GetAvaliableBalanceResponseModelBody.fromJson(value);
         case 'GetAvaliableBalanceResponseModelBodyItem':
           return GetAvaliableBalanceResponseModelBodyItem.fromJson(value);
+        case 'GetBalanceHistoryResponseModel':
+          return GetBalanceHistoryResponseModel.fromJson(value);
+        case 'GetBalanceHistoryResponseModelBody':
+          return GetBalanceHistoryResponseModelBody.fromJson(value);
         case 'GetStockdataInfoResponseModel':
           return GetStockdataInfoResponseModel.fromJson(value);
         case 'GetStockdataInfoResponseModelBody':
