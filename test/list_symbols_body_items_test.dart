@@ -21,7 +21,7 @@ void main() {
       // TODO
     });
 
-    // List<Model1yearStockdataResponseModelBodyItems> data (default value: const [])
+    // List<ListSymbolsBodyData> data (default value: const [])
     test('to test the property `data`', () async {
       // TODO
     });

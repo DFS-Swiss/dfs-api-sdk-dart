@@ -31,34 +31,19 @@ part 'api/dfs_api.dart';
 
 part 'model/buy_asset_request_model.dart';
 part 'model/buy_asset_response_model.dart';
-part 'model/get_avaliable_assets_response_model.dart';
-part 'model/get_avaliable_assets_response_model_body.dart';
-part 'model/get_avaliable_assets_response_model_body_items.dart';
-part 'model/get_avaliable_balance_response_model.dart';
-part 'model/get_avaliable_balance_response_model_body.dart';
-part 'model/get_avaliable_balance_response_model_body_item.dart';
-part 'model/get_balance_history_response_model.dart';
-part 'model/get_balance_history_response_model_body.dart';
 part 'model/get_stockdata_info_response_model.dart';
 part 'model/get_stockdata_info_response_model_body.dart';
 part 'model/get_stockdata_info_response_model_body_item.dart';
-part 'model/get_stockdata_latest_response_model.dart';
-part 'model/get_stockdata_latest_response_model_body.dart';
-part 'model/get_user_response_model.dart';
-part 'model/get_user_response_model_body.dart';
-part 'model/get_user_response_model_body_item.dart';
 part 'model/list_symbols.dart';
 part 'model/list_symbols_body.dart';
+part 'model/list_symbols_body_data.dart';
 part 'model/list_symbols_body_items.dart';
 part 'model/model1year_stockdata_response_model.dart';
-part 'model/model1year_stockdata_response_model_body.dart';
-part 'model/model1year_stockdata_response_model_body_items.dart';
 part 'model/model24h_stockdata_response_model.dart';
 part 'model/model2years_stockdata_response_model.dart';
 part 'model/mtd_stockdata_response_model.dart';
-part 'model/sell_asset_request_model.dart';
-part 'model/sell_asset_response_model.dart';
 part 'model/ytd_stockdata_response_model.dart';
+part 'model/ytd_stockdata_response_model_body.dart';
 
 
 const _delimiters = {'csv': ',', 'ssv': ' ', 'tsv': '\t', 'pipes': '|'};

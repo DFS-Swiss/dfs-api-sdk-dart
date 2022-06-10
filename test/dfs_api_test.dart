@@ -22,28 +22,8 @@ void main() {
       // TODO
     });
 
-    //Future<GetAvaliableAssetsResponseModel> getAvaliableAssets(String apiKey) async
-    test('test getAvaliableAssets', () async {
-      // TODO
-    });
-
-    //Future<GetAvaliableBalanceResponseModel> getAvaliableBalance(String apiKey) async
-    test('test getAvaliableBalance', () async {
-      // TODO
-    });
-
-    //Future<GetBalanceHistoryResponseModel> getBalanceHistory(String apiKey) async
-    test('test getBalanceHistory', () async {
-      // TODO
-    });
-
     //Future<GetStockdataInfoResponseModel> getStockdataInfo(String symbol, String apiKey) async
     test('test getStockdataInfo', () async {
-      // TODO
-    });
-
-    //Future<GetStockdataLatestResponseModel> getStockdataLatest(String symbol, String apiKey) async
-    test('test getStockdataLatest', () async {
       // TODO
     });
 
@@ -67,11 +47,6 @@ void main() {
       // TODO
     });
 
-    //Future<SellAssetResponseModel> sellAsset(String apiKey, SellAssetRequestModel sellAssetRequestModel) async
-    test('test sellAsset', () async {
-      // TODO
-    });
-
     //Future<Model24hStockdataResponseModel> twentyfourHourStockdata(String apiKey, String symbol) async
     test('test twentyfourHourStockdata', () async {
       // TODO
@@ -79,11 +54,6 @@ void main() {
 
     //Future<Model2yearsStockdataResponseModel> twoYearsStockdata(String apiKey, String symbol) async
     test('test twoYearsStockdata', () async {
-      // TODO
-    });
-
-    //Future<GetUserResponseModel> userGet(String apiKey) async
-    test('test userGet', () async {
       // TODO
     });
 

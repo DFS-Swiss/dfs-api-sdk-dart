@@ -5,24 +5,18 @@
 import 'package:dfs_sdk/api.dart';
 ```
 
-All URIs are relative to *https://ryfjnva5k5.execute-api.eu-central-1.amazonaws.com/prod*
+All URIs are relative to *https://rest.dfs-api.ch*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**buyAsset**](DfsApi.md#buyasset) | **POST** /v1/assets/buy | 
-[**getAvaliableAssets**](DfsApi.md#getavaliableassets) | **GET** /v1/user/assets | 
-[**getAvaliableBalance**](DfsApi.md#getavaliablebalance) | **GET** /v1/user/balance | 
-[**getBalanceHistory**](DfsApi.md#getbalancehistory) | **GET** /v1/user/balance/history | 
 [**getStockdataInfo**](DfsApi.md#getstockdatainfo) | **GET** /v1/stockdata/{symbol} | 
-[**getStockdataLatest**](DfsApi.md#getstockdatalatest) | **GET** /v1/stockdata/{symbol}/latest | 
 [**listSymbols**](DfsApi.md#listsymbols) | **GET** /v1/stockdata/list | 
 [**mtdStockdata**](DfsApi.md#mtdstockdata) | **GET** /v1/stockdata/{symbol}/mtd | 
 [**oneYearStockdata**](DfsApi.md#oneyearstockdata) | **GET** /v1/stockdata/{symbol}/1year | 
 [**rootOptions**](DfsApi.md#rootoptions) | **OPTIONS** / | 
-[**sellAsset**](DfsApi.md#sellasset) | **POST** /v1/assets/sell | 
 [**twentyfourHourStockdata**](DfsApi.md#twentyfourhourstockdata) | **GET** /v1/stockdata/{symbol}/24h | 
 [**twoYearsStockdata**](DfsApi.md#twoyearsstockdata) | **GET** /v1/stockdata/{symbol}/2years | 
-[**userGet**](DfsApi.md#userget) | **GET** /v1/user | 
 [**v1AssetsBuyOptions**](DfsApi.md#v1assetsbuyoptions) | **OPTIONS** /v1/assets/buy | 
 [**v1AssetsOptions**](DfsApi.md#v1assetsoptions) | **OPTIONS** /v1/assets | 
 [**v1AssetsSellOptions**](DfsApi.md#v1assetsselloptions) | **OPTIONS** /v1/assets/sell | 
@@ -90,141 +84,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getAvaliableAssets**
-> GetAvaliableAssetsResponseModel getAvaliableAssets(apiKey)
-
-
-
-### Example
-```dart
-import 'package:dfs_sdk/api.dart';
-// TODO Configure API key authorization: proddfsswisscognitoAuthorizer029DC9BB
-//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKeyPrefix = 'Bearer';
-
-final api_instance = DfsApi();
-final apiKey = apiKey_example; // String | 
-
-try {
-    final result = api_instance.getAvaliableAssets(apiKey);
-    print(result);
-} catch (e) {
-    print('Exception when calling DfsApi->getAvaliableAssets: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiKey** | **String**|  | 
-
-### Return type
-
-[**GetAvaliableAssetsResponseModel**](GetAvaliableAssetsResponseModel.md)
-
-### Authorization
-
-[proddfsswisscognitoAuthorizer029DC9BB](../README.md#proddfsswisscognitoAuthorizer029DC9BB)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getAvaliableBalance**
-> GetAvaliableBalanceResponseModel getAvaliableBalance(apiKey)
-
-
-
-### Example
-```dart
-import 'package:dfs_sdk/api.dart';
-// TODO Configure API key authorization: proddfsswisscognitoAuthorizer029DC9BB
-//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKeyPrefix = 'Bearer';
-
-final api_instance = DfsApi();
-final apiKey = apiKey_example; // String | 
-
-try {
-    final result = api_instance.getAvaliableBalance(apiKey);
-    print(result);
-} catch (e) {
-    print('Exception when calling DfsApi->getAvaliableBalance: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiKey** | **String**|  | 
-
-### Return type
-
-[**GetAvaliableBalanceResponseModel**](GetAvaliableBalanceResponseModel.md)
-
-### Authorization
-
-[proddfsswisscognitoAuthorizer029DC9BB](../README.md#proddfsswisscognitoAuthorizer029DC9BB)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getBalanceHistory**
-> GetBalanceHistoryResponseModel getBalanceHistory(apiKey)
-
-
-
-### Example
-```dart
-import 'package:dfs_sdk/api.dart';
-// TODO Configure API key authorization: proddfsswisscognitoAuthorizer029DC9BB
-//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKeyPrefix = 'Bearer';
-
-final api_instance = DfsApi();
-final apiKey = apiKey_example; // String | 
-
-try {
-    final result = api_instance.getBalanceHistory(apiKey);
-    print(result);
-} catch (e) {
-    print('Exception when calling DfsApi->getBalanceHistory: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiKey** | **String**|  | 
-
-### Return type
-
-[**GetBalanceHistoryResponseModel**](GetBalanceHistoryResponseModel.md)
-
-### Authorization
-
-[proddfsswisscognitoAuthorizer029DC9BB](../README.md#proddfsswisscognitoAuthorizer029DC9BB)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **getStockdataInfo**
 > GetStockdataInfoResponseModel getStockdataInfo(symbol, apiKey)
 
@@ -260,53 +119,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetStockdataInfoResponseModel**](GetStockdataInfoResponseModel.md)
-
-### Authorization
-
-[proddfsswisscognitoAuthorizer029DC9BB](../README.md#proddfsswisscognitoAuthorizer029DC9BB)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getStockdataLatest**
-> GetStockdataLatestResponseModel getStockdataLatest(symbol, apiKey)
-
-
-
-### Example
-```dart
-import 'package:dfs_sdk/api.dart';
-// TODO Configure API key authorization: proddfsswisscognitoAuthorizer029DC9BB
-//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKeyPrefix = 'Bearer';
-
-final api_instance = DfsApi();
-final symbol = symbol_example; // String | 
-final apiKey = apiKey_example; // String | 
-
-try {
-    final result = api_instance.getStockdataLatest(symbol, apiKey);
-    print(result);
-} catch (e) {
-    print('Exception when calling DfsApi->getStockdataLatest: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **symbol** | **String**|  | 
- **apiKey** | **String**|  | 
-
-### Return type
-
-[**GetStockdataLatestResponseModel**](GetStockdataLatestResponseModel.md)
 
 ### Authorization
 
@@ -482,53 +294,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **sellAsset**
-> SellAssetResponseModel sellAsset(apiKey, sellAssetRequestModel)
-
-
-
-### Example
-```dart
-import 'package:dfs_sdk/api.dart';
-// TODO Configure API key authorization: proddfsswisscognitoAuthorizer029DC9BB
-//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKeyPrefix = 'Bearer';
-
-final api_instance = DfsApi();
-final apiKey = apiKey_example; // String | 
-final sellAssetRequestModel = SellAssetRequestModel(); // SellAssetRequestModel | 
-
-try {
-    final result = api_instance.sellAsset(apiKey, sellAssetRequestModel);
-    print(result);
-} catch (e) {
-    print('Exception when calling DfsApi->sellAsset: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiKey** | **String**|  | 
- **sellAssetRequestModel** | [**SellAssetRequestModel**](SellAssetRequestModel.md)|  | 
-
-### Return type
-
-[**SellAssetResponseModel**](SellAssetResponseModel.md)
-
-### Authorization
-
-[proddfsswisscognitoAuthorizer029DC9BB](../README.md#proddfsswisscognitoAuthorizer029DC9BB)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **twentyfourHourStockdata**
 > Model24hStockdataResponseModel twentyfourHourStockdata(apiKey, symbol)
 
@@ -607,51 +372,6 @@ Name | Type | Description  | Notes
 ### Authorization
 
 No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **userGet**
-> GetUserResponseModel userGet(apiKey)
-
-
-
-### Example
-```dart
-import 'package:dfs_sdk/api.dart';
-// TODO Configure API key authorization: proddfsswisscognitoAuthorizer029DC9BB
-//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('proddfsswisscognitoAuthorizer029DC9BB').apiKeyPrefix = 'Bearer';
-
-final api_instance = DfsApi();
-final apiKey = apiKey_example; // String | 
-
-try {
-    final result = api_instance.userGet(apiKey);
-    print(result);
-} catch (e) {
-    print('Exception when calling DfsApi->userGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiKey** | **String**|  | 
-
-### Return type
-
-[**GetUserResponseModel**](GetUserResponseModel.md)
-
-### Authorization
-
-[proddfsswisscognitoAuthorizer029DC9BB](../README.md#proddfsswisscognitoAuthorizer029DC9BB)
 
 ### HTTP request headers
 

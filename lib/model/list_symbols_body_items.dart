@@ -19,7 +19,7 @@ class ListSymbolsBodyItems {
 
   GetStockdataInfoResponseModelBodyItem symbol;
 
-  List<Model1yearStockdataResponseModelBodyItems> data;
+  List<ListSymbolsBodyData> data;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ListSymbolsBodyItems &&
@@ -62,7 +62,7 @@ class ListSymbolsBodyItems {
 
       return ListSymbolsBodyItems(
         symbol: GetStockdataInfoResponseModelBodyItem.fromJson(json[r'symbol'])!,
-        data: Model1yearStockdataResponseModelBodyItems.listFromJson(json[r'data'])!,
+        data: ListSymbolsBodyData.listFromJson(json[r'data'])!,
       );
     }
     return null;

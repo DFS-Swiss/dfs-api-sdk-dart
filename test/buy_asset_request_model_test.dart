@@ -21,12 +21,12 @@ void main() {
       // TODO
     });
 
-    // num amountToSpend
+    // double amountToSpend (default value: 0)
     test('to test the property `amountToSpend`', () async {
       // TODO
     });
 
-    // num tokenToBuy
+    // double tokenToBuy (default value: 0)
     test('to test the property `tokenToBuy`', () async {
       // TODO
     });

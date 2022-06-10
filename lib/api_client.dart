@@ -11,7 +11,7 @@
 part of openapi.api;
 
 class ApiClient {
-  ApiClient({this.basePath = 'https://ryfjnva5k5.execute-api.eu-central-1.amazonaws.com/prod'}) {
+  ApiClient({this.basePath = 'https://rest.dfs-api.ch'}) {
     // Setup authentications (key: authentication name, value: authentication).
     _authentications[r'proddfsswisscognitoAuthorizer029DC9BB'] = ApiKeyAuth('header', 'apiKey');
   }
@@ -213,62 +213,32 @@ class ApiClient {
           return BuyAssetRequestModel.fromJson(value);
         case 'BuyAssetResponseModel':
           return BuyAssetResponseModel.fromJson(value);
-        case 'GetAvaliableAssetsResponseModel':
-          return GetAvaliableAssetsResponseModel.fromJson(value);
-        case 'GetAvaliableAssetsResponseModelBody':
-          return GetAvaliableAssetsResponseModelBody.fromJson(value);
-        case 'GetAvaliableAssetsResponseModelBodyItems':
-          return GetAvaliableAssetsResponseModelBodyItems.fromJson(value);
-        case 'GetAvaliableBalanceResponseModel':
-          return GetAvaliableBalanceResponseModel.fromJson(value);
-        case 'GetAvaliableBalanceResponseModelBody':
-          return GetAvaliableBalanceResponseModelBody.fromJson(value);
-        case 'GetAvaliableBalanceResponseModelBodyItem':
-          return GetAvaliableBalanceResponseModelBodyItem.fromJson(value);
-        case 'GetBalanceHistoryResponseModel':
-          return GetBalanceHistoryResponseModel.fromJson(value);
-        case 'GetBalanceHistoryResponseModelBody':
-          return GetBalanceHistoryResponseModelBody.fromJson(value);
         case 'GetStockdataInfoResponseModel':
           return GetStockdataInfoResponseModel.fromJson(value);
         case 'GetStockdataInfoResponseModelBody':
           return GetStockdataInfoResponseModelBody.fromJson(value);
         case 'GetStockdataInfoResponseModelBodyItem':
           return GetStockdataInfoResponseModelBodyItem.fromJson(value);
-        case 'GetStockdataLatestResponseModel':
-          return GetStockdataLatestResponseModel.fromJson(value);
-        case 'GetStockdataLatestResponseModelBody':
-          return GetStockdataLatestResponseModelBody.fromJson(value);
-        case 'GetUserResponseModel':
-          return GetUserResponseModel.fromJson(value);
-        case 'GetUserResponseModelBody':
-          return GetUserResponseModelBody.fromJson(value);
-        case 'GetUserResponseModelBodyItem':
-          return GetUserResponseModelBodyItem.fromJson(value);
         case 'ListSymbols':
           return ListSymbols.fromJson(value);
         case 'ListSymbolsBody':
           return ListSymbolsBody.fromJson(value);
+        case 'ListSymbolsBodyData':
+          return ListSymbolsBodyData.fromJson(value);
         case 'ListSymbolsBodyItems':
           return ListSymbolsBodyItems.fromJson(value);
         case 'Model1yearStockdataResponseModel':
           return Model1yearStockdataResponseModel.fromJson(value);
-        case 'Model1yearStockdataResponseModelBody':
-          return Model1yearStockdataResponseModelBody.fromJson(value);
-        case 'Model1yearStockdataResponseModelBodyItems':
-          return Model1yearStockdataResponseModelBodyItems.fromJson(value);
         case 'Model24hStockdataResponseModel':
           return Model24hStockdataResponseModel.fromJson(value);
         case 'Model2yearsStockdataResponseModel':
           return Model2yearsStockdataResponseModel.fromJson(value);
         case 'MtdStockdataResponseModel':
           return MtdStockdataResponseModel.fromJson(value);
-        case 'SellAssetRequestModel':
-          return SellAssetRequestModel.fromJson(value);
-        case 'SellAssetResponseModel':
-          return SellAssetResponseModel.fromJson(value);
         case 'YtdStockdataResponseModel':
           return YtdStockdataResponseModel.fromJson(value);
+        case 'YtdStockdataResponseModelBody':
+          return YtdStockdataResponseModelBody.fromJson(value);
         default:
           dynamic match;
           if (value is List && (match = _regList.firstMatch(targetType)?.group(1)) != null) {

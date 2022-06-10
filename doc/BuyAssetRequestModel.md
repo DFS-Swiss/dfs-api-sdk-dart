@@ -9,8 +9,8 @@ import 'package:dfs_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **symbol** | **String** |  | 
-**amountToSpend** | **num** |  | [optional] 
-**tokenToBuy** | **num** |  | [optional] 
+**amountToSpend** | **double** |  | [optional] [default to 0]
+**tokenToBuy** | **double** |  | [optional] [default to 0]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

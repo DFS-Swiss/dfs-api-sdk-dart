@@ -14,27 +14,17 @@ class BuyAssetRequestModel {
   /// Returns a new [BuyAssetRequestModel] instance.
   BuyAssetRequestModel({
     required this.symbol,
-    this.amountToSpend,
-    this.tokenToBuy,
+    this.amountToSpend = 0,
+    this.tokenToBuy = 0,
   });
 
   String symbol;
 
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  num? amountToSpend;
+  /// Minimum value: 0
+  double amountToSpend;
 
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  num? tokenToBuy;
+  /// Minimum value: 0
+  double tokenToBuy;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is BuyAssetRequestModel &&
@@ -46,8 +36,8 @@ class BuyAssetRequestModel {
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (symbol.hashCode) +
-    (amountToSpend == null ? 0 : amountToSpend!.hashCode) +
-    (tokenToBuy == null ? 0 : tokenToBuy!.hashCode);
+    (amountToSpend.hashCode) +
+    (tokenToBuy.hashCode);
 
   @override
   String toString() => 'BuyAssetRequestModel[symbol=$symbol, amountToSpend=$amountToSpend, tokenToBuy=$tokenToBuy]';
@@ -55,12 +45,8 @@ class BuyAssetRequestModel {
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
       json[r'symbol'] = symbol;
-    if (amountToSpend != null) {
       json[r'amountToSpend'] = amountToSpend;
-    }
-    if (tokenToBuy != null) {
       json[r'tokenToBuy'] = tokenToBuy;
-    }
     return json;
   }
 
@@ -84,12 +70,8 @@ class BuyAssetRequestModel {
 
       return BuyAssetRequestModel(
         symbol: mapValueOfType<String>(json, r'symbol')!,
-        amountToSpend: json[r'amountToSpend'] == null
-            ? null
-            : num.parse(json[r'amountToSpend'].toString()),
-        tokenToBuy: json[r'tokenToBuy'] == null
-            ? null
-            : num.parse(json[r'tokenToBuy'].toString()),
+        amountToSpend: mapValueOfType<double>(json, r'amountToSpend') ?? 0,
+        tokenToBuy: mapValueOfType<double>(json, r'tokenToBuy') ?? 0,
       );
     }
     return null;

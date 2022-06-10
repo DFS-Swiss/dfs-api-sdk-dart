@@ -21,7 +21,7 @@ void main() {
       // TODO
     });
 
-    // Model1yearStockdataResponseModelBody body
+    // YtdStockdataResponseModelBody body
     test('to test the property `body`', () async {
       // TODO
     });

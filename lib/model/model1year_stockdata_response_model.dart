@@ -26,7 +26,7 @@ class Model1yearStockdataResponseModel {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  Model1yearStockdataResponseModelBody? body;
+  YtdStockdataResponseModelBody? body;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -84,7 +84,7 @@ class Model1yearStockdataResponseModel {
 
       return Model1yearStockdataResponseModel(
         message: mapValueOfType<String>(json, r'message')!,
-        body: Model1yearStockdataResponseModelBody.fromJson(json[r'body']),
+        body: YtdStockdataResponseModelBody.fromJson(json[r'body']),
         statusCode: json[r'statusCode'] == null
             ? null
             : num.parse(json[r'statusCode'].toString()),
